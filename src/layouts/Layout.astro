@@ -1,0 +1,53 @@
+---
+import Footer from '@/components/Footer.astro';
+import Header from '@/components/Header.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta
+      name='description'
+      content="I'm a full stack developer with a DevOps mindset. I enjoy learning about new technologies, programming languages, and frameworks."
+    />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body
+    class='m-auto max-w-xl bg-white text-gray-900 dark:bg-black dark:text-gray-50'
+  >
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,400i,700,700i&display=swap&subset=cyrillic,cyrillic-ext,greek,latin-ext,vietnamese');
+
+  body {
+    font-family:
+      Source Code Pro,
+      -apple-system,
+      system-ui,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      'Helvetica Neue',
+      Arial,
+      sans-serif;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: #fff;
+  }
+</style>

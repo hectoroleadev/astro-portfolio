@@ -1,0 +1,75 @@
+---
+import cv from '@cv';
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+
+const {
+  basics: { name, summary, label },
+  connect: { socials },
+} = cv;
+
+const [iconSize, imageSize] = [30, 156];
+---
+
+<div class='w-full max-w-md mx-auto'>
+  <div class='flex flex-col items-center gap-y-4'>
+    <Image
+      src='https://storage.hectorolea.dev/hector-olea.jpg'
+      alt={name}
+      height={imageSize}
+      width={imageSize}
+      class='w-40 h-40 rounded-xl my-border'
+      loading='eager'
+    />
+    <h1 class='text-3xl md:text-4xl font-bold tracking-tight'>
+      {name}
+    </h1>
+    <h2 class='text-2xl md:text-3xl tracking-wide leading-tight font-medium'>
+      {label}
+    </h2>
+    <div class='flex flex-wrap justify-center mt-2 md:mt-2'>
+      {
+        socials.map(({ url, label, icon }) => (
+          <a
+            href={url}
+            class='pointer-events-auto inline-flex gap-2 items-center my-border'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <Icon name={icon} size={iconSize} />
+            {label}
+          </a>
+        ))
+      }
+    </div>
+    <p
+      class='mt-2 text-gray-700 dark:text-gray-300 text-md md:text-lg text-justify tracking-wide'
+    >
+      {summary}
+    </p>
+    <div class='mt-5'>
+      <a
+        class='inline-flex gap-2 items-center my-border'
+        href='https://storage.hectorolea.dev/hector-olea-resume.pdf'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        <Icon name='download' size={iconSize} />
+        <span>download my resume</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .my-hover {
+    @apply hover:bg-gray-950 hover:text-gray-50 hover:dark:bg-gray-50 hover:dark:text-gray-950;
+  }
+  a {
+    @apply text-sm py-1 px-2 m-2 rounded-lg my-hover transition-all ease-in-out duration-300  hover:border-transparent;
+  }
+
+  .my-border {
+    @apply border border-gray-950 dark:border-gray-50;
+  }
+</style>

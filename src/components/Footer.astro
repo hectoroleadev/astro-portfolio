@@ -1,0 +1,18 @@
+---
+import cv from '@cv';
+
+const {
+  basics: { domain },
+} = cv;
+
+const year = new Date().getFullYear();
+---
+
+<footer
+  class='mt-auto justify-center pb-4 pt-20 text-center align-top opacity-60'
+>
+  <div class='me-0 sm:me-4'>
+    &copy;{year}
+    {domain}
+  </div>
+</footer>
