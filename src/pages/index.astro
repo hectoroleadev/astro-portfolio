@@ -1,10 +1,17 @@
 ---
 import Hero from '@/components/Hero.astro';
 import Layout from '@/layouts/Layout.astro';
+import cv from '@cv';
+
+const {
+  basics: { domain, summary, name, image },
+} = cv;
 ---
 
-<Layout title='hector olea'>
-  <section class='min-h-[75vh] place-content-center place-items-center'>
+<Layout title={name} site={domain} description={summary} image={image}>
+  <section
+    class='min-h-[75vh] place-content-center place-items-center px-5 animate-fade'
+  >
     <Hero />
   </section>
 </Layout>
