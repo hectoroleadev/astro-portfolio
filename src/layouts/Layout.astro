@@ -40,7 +40,27 @@ const { title, site, description, image } = Astro.props;
 <style is:global>
   body {
     font-family: 'Source Code Pro Variable', monospace;
+    font-weight: 375;
+    font-variation-settings:
+      'wdth' 75,
+      'wght' 375;
     @apply m-auto max-w-xl bg-white text-gray-900 dark:bg-black dark:text-gray-50;
+  }
+
+  h1 {
+    font-family: 'Source Code Pro Variable', monospace;
+    font-weight: 400;
+    font-variation-settings:
+      'wdth' 75,
+      'wght' 400;
+  }
+
+  h2 {
+    font-family: 'Source Code Pro Variable', monospace;
+    font-weight: 325;
+    font-variation-settings:
+      'wdth' 75,
+      'wght' 325;
   }
 </style>
 <script is:inline>

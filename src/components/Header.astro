@@ -1,12 +1,46 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
 ---
 
-<header class='text-end p-5'>
-  <button type='button' id='theme-selector'>
-    <span class='hidden dark:inline'><Icon name='sun' size={24} /></span>
-    <span class='dark:hidden'><Icon name='moon' size={24} /></span>
-  </button>
+<header class='p-5'>
+  <nav class='flex justify-between items-center top-0 z-10'>
+    <h1 class='text-xl text-gray-800 font-bold'>
+      <a href='/'>
+        <span class='dark:hidden'>
+          <Image
+            src='/logos/hectoroleadev-logo.png'
+            alt='hector olea'
+            height={30}
+            width={30}
+            class='w-[80%] h-[80%]'
+            loading='eager'
+          />
+        </span>
+        <span class='hidden dark:inline'>
+          <Image
+            src='/logos/dark-hectoroleadev-logo.png'
+            alt='hector olea'
+            height={30}
+            width={30}
+            class='w-[80%] h-[80%]'
+            loading='eager'
+          />
+        </span>
+      </a>
+    </h1>
+    <div class='flex items-center'>
+      <ul class='flex items-center space-x-6'>
+        <li>
+          <button type='button' id='theme-selector'>
+            <span class='hidden dark:inline'><Icon name='sun' size={24} /></span
+            >
+            <span class='dark:hidden'><Icon name='moon' size={24} /></span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </header>
 
 <script>

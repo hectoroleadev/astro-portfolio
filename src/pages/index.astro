@@ -4,11 +4,16 @@ import Layout from '@/layouts/Layout.astro';
 import cv from '@cv';
 
 const {
-  basics: { domain, summary, name, image },
+  basics: { siteName, summary, name, label, logo },
 } = cv;
 ---
 
-<Layout title={name} site={domain} description={summary} image={image}>
+<Layout
+  title={`${name} | ${label}`}
+  site={siteName}
+  description={summary}
+  image={logo}
+>
   <section
     class='min-h-[75vh] place-content-center place-items-center px-5 animate-fade'
   >
