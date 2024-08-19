@@ -6,7 +6,8 @@
     "summary": "I'm a full stack developer with a DevOps mindset. I enjoy learning about new technologies, programming languages, and frameworks.",
     "siteName": "hectorOleaDev",
     "pdf": "https://storage.hectorolea.dev/hector-olea-resume.pdf",
-    "logo": "/logos/hectoroleadev-logo.png",
+    "logo": "https://storage.hectorolea.dev/logos/hectoroleadev-logo.png",
+    "darkLogo": "https://storage.hectorolea.dev/logos/dark-hectoroleadev-logo.png",
     "location": {
       "city": "Aguascalientes",
       "countryCode": "MX",

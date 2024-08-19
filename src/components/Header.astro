@@ -1,6 +1,13 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
+import cv from '@cv';
+
+const {
+  basics: { logo, darkLogo, siteName },
+} = cv;
+
+const [iconSize, logoSize] = [24, 30];
 ---
 
 <header class='p-5'>
@@ -9,22 +16,21 @@ import { Image } from 'astro:assets';
       <a href='/'>
         <span class='dark:hidden'>
           <Image
-            src='/logos/hectoroleadev-logo.png'
-            alt='hector olea'
-            height={30}
-            width={30}
+            src={logo}
+            alt={siteName}
+            height={logoSize}
+            width={logoSize}
             class='w-[80%] h-[80%]'
             loading='eager'
           />
         </span>
         <span class='hidden dark:inline'>
           <Image
-            src='/logos/dark-hectoroleadev-logo.png'
-            alt='hector olea'
-            height={30}
-            width={30}
+            src={darkLogo}
+            alt={siteName}
+            height={logoSize}
+            width={logoSize}
             class='w-[80%] h-[80%]'
-            loading='eager'
           />
         </span>
       </a>
@@ -33,9 +39,11 @@ import { Image } from 'astro:assets';
       <ul class='flex items-center space-x-6'>
         <li>
           <button type='button' id='theme-selector'>
-            <span class='hidden dark:inline'><Icon name='sun' size={24} /></span
+            <span class='hidden dark:inline'
+              ><Icon name='sun' size={iconSize} /></span
             >
-            <span class='dark:hidden'><Icon name='moon' size={24} /></span>
+            <span class='dark:hidden'><Icon name='moon' size={iconSize} /></span
+            >
           </button>
         </li>
       </ul>
