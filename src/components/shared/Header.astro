@@ -4,7 +4,7 @@ import { Image } from 'astro:assets';
 import cv from '@cv';
 
 const {
-  basics: { logo, darkLogo, siteName },
+  basics: { siteLogo, siteName },
 } = cv;
 
 const [iconSize, logoSize] = [24, 30];
@@ -16,7 +16,7 @@ const [iconSize, logoSize] = [24, 30];
       <a href='/'>
         <span class='dark:hidden'>
           <Image
-            src={logo}
+            src={siteLogo.light}
             alt={siteName}
             height={logoSize}
             width={logoSize}
@@ -26,7 +26,7 @@ const [iconSize, logoSize] = [24, 30];
         </span>
         <span class='hidden dark:inline'>
           <Image
-            src={darkLogo}
+            src={siteLogo.dark}
             alt={siteName}
             height={logoSize}
             width={logoSize}

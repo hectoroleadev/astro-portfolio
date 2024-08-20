@@ -2,12 +2,15 @@
   "basics": {
     "name": "hector olea",
     "label": "full stack developer",
-    "image": "https://storage.hectorolea.dev/hector-olea.jpg",
+    "avatar": "https://storage.hectorolea.dev/hector-olea.jpg",
     "summary": "I'm a full stack developer with a DevOps mindset. I enjoy learning about new technologies, programming languages, and frameworks.",
     "siteName": "hectorOleaDev",
-    "pdf": "https://storage.hectorolea.dev/hector-olea-resume.pdf",
-    "logo": "https://storage.hectorolea.dev/logos/hectoroleadev-logo.png",
-    "darkLogo": "https://storage.hectorolea.dev/logos/dark-hectoroleadev-logo.png",
+    "resumePdf": "https://storage.hectorolea.dev/hector-olea-resume.pdf",
+    "siteLogo": {
+      "light": "https://storage.hectorolea.dev/logos/hectoroleadev-logo.png",
+      "dark": "https://storage.hectorolea.dev/logos/dark-hectoroleadev-logo.png",
+      "og": "hectoroleadev-logo.jpg"
+    },
     "location": {
       "city": "Aguascalientes",
       "countryCode": "MX",

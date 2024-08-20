@@ -1,24 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 160.5 140">
-    <style>
-        .st {
-        fill: none;
-        stroke: #222;
-        stroke-width: 17;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-miterlimit: 1
-        }
+<svg width="100" height="100" viewBox="0 0 5 5" version="1.1" id="svg1"
+   xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+   <style>
+      .st {
+      stroke-width:0.264583
+      }
 
-        .st1 {
-        stroke: #222;
-        }
+      .st1 {
+      stroke: #000;
+      }
 
-        @media (prefers-color-scheme: dark) {
-        .st1 {
-        stroke: #ddd;
-        }
-        }
-    </style>
-    <path d="M49.5 111l-41-41 41-41M111 111l41-41-41-41" class="st st1" />
-    <path d="M70 131.5l20.5-123" class="st st1" />
+      @media (prefers-color-scheme: dark) {
+      .st1 {
+      stroke: #fff;
+      }
+      }
+   </style>
+   <g
+      id="layer"
+      transform="translate(-63.030599,-143.93892)">
+      <g id="g2" transform="translate(-0.419383,-0.50000093)">
+         <path
+            d="m 65.463708,147.91872 0.08062,-0.17157 -1.798857,-0.79736 v -0.0186 l 1.302246,-0.5457 v -0.21704 l -1.516186,0.66197 v 0.22015 z"
+            class="st st1"
+            id="path1" />
+         <path
+            d="m 66.582503,145.54367 -1.03818,2.20348 0.04134,0.0181 -0.0155,0.20154 -0.106453,-0.0481 -0.195854,0.41548 h 0.21084 l 1.005107,-2.13372 -0.06873,-0.0305 v -0.20929 l 0.150378,0.0667 0.227893,-0.48369 z"
+            class="st st1"
+            id="path2" />
+         <path
+            d="m 66.565449,146.02736 -0.08165,0.17312 1.666048,0.7307 v 0.0186 l -1.26659,0.54105 v 0.21704 l 1.485181,-0.65732 v -0.22015 z"
+            class="st st1"
+            id="path3" />
+      </g>
+   </g>
 </svg>

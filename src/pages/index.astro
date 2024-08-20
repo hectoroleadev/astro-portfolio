@@ -4,7 +4,7 @@ import Layout from '@/layouts/Layout.astro';
 import cv from '@cv';
 
 const {
-  basics: { siteName, summary, name, label, logo },
+  basics: { siteName, summary, name, label, siteLogo },
 } = cv;
 ---
 
@@ -12,7 +12,7 @@ const {
   title={`${name} | ${label}`}
   site={siteName}
   description={summary}
-  image={logo}
+  image={siteLogo.og}
 >
   <section
     class='min-h-[75vh] place-content-center place-items-center px-5 animate-fade'

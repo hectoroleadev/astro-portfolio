@@ -4,7 +4,7 @@ import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 
 const {
-  basics: { name, summary, label, image, pdf },
+  basics: { name, summary, label, avatar, resumePdf },
   connect: { socials },
 } = cv;
 
@@ -13,7 +13,7 @@ const [iconSize, imageSize] = [30, 156];
 
 <div class='flex flex-col items-center gap-y-4'>
   <Image
-    src={image}
+    src={avatar}
     alt={name}
     height={imageSize}
     width={imageSize}
@@ -49,7 +49,7 @@ const [iconSize, imageSize] = [30, 156];
   <div class='mt-10'>
     <a
       class='inline-flex gap-2 items-center my-border'
-      href={pdf}
+      href={resumePdf}
       target='_blank'
       rel='noopener noreferrer'
     >
