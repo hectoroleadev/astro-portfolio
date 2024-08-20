@@ -7,6 +7,7 @@
     "siteName": "hectoroleadev",
     "resumePdf": "https://storage.hectorolea.dev/hector-olea-resume.pdf",
     "siteLogo": "/hectoroleadev-logo.svg",
+    "siteOgLogo": "/hectoroleadev-og-logo.jpg",
     "location": {
       "city": "Aguascalientes",
       "countryCode": "MX",
