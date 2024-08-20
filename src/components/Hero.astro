@@ -8,16 +8,16 @@ const {
   connect: { socials },
 } = cv;
 
-const [iconSize, imageSize] = [30, 156];
+const [iconSize, imageSize] = [30, 150];
 ---
 
-<div class='flex flex-col items-center gap-y-4'>
+<div class='flex flex-col items-center gap-y-2'>
   <Image
     src={avatar}
     alt={name}
     height={imageSize}
     width={imageSize}
-    class='w-40 h-40 rounded-xl my-border'
+    class='w-38 h-38 rounded-3xl my-border'
     loading='eager'
   />
   <h1 class='text-3xl md:text-4xl tracking-tight'>
@@ -46,7 +46,7 @@ const [iconSize, imageSize] = [30, 156];
   >
     {summary}
   </p>
-  <div class='mt-10'>
+  <div>
     <a
       class='inline-flex gap-2 items-center my-border'
       href={resumePdf}

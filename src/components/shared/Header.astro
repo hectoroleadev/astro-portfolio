@@ -12,27 +12,17 @@ const [iconSize, logoSize] = [24, 30];
 
 <header class='p-5'>
   <nav class='flex justify-between items-center top-0 z-10'>
-    <h1 class='text-xl text-gray-800 font-bold'>
-      <a href='/'>
-        <span class='dark:hidden'>
-          <Image
-            src={siteLogo.light}
-            alt={siteName}
-            height={logoSize}
-            width={logoSize}
-            class='w-[80%] h-[80%]'
-            loading='eager'
-          />
-        </span>
-        <span class='hidden dark:inline'>
-          <Image
-            src={siteLogo.dark}
-            alt={siteName}
-            height={logoSize}
-            width={logoSize}
-            class='w-[80%] h-[80%]'
-          />
-        </span>
+    <h1 class='text-2xl text-gray-800 dark:text-gray-50 font-bold'>
+      <a href='/' class='inline-flex'>
+        <Image
+          src={siteLogo}
+          alt={siteName}
+          height={logoSize}
+          width={logoSize}
+          loading='eager'
+        />
+        <span class='ml-2'>hectorolea</span>
+        <span class='text-gray-500 dark:text-gray-600'>dev</span>
       </a>
     </h1>
     <div class='flex items-center'>
