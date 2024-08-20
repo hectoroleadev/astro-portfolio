@@ -9,7 +9,7 @@
     "siteLogo": {
       "light": "https://storage.hectorolea.dev/logos/hectoroleadev-logo.png",
       "dark": "https://storage.hectorolea.dev/logos/dark-hectoroleadev-logo.png",
-      "og": "hectoroleadev-logo.jpg"
+      "og": "https://storage.hectorolea.dev/hectoroleadev-logo.jpg"
     },
     "location": {
       "city": "Aguascalientes",
