@@ -11,7 +11,7 @@ const {
 const [iconSize, imageSize] = [30, 150];
 ---
 
-<div class='flex flex-col items-center gap-y-2'>
+<div class='flex flex-col items-center gap-y-4'>
   <Image
     src={avatar}
     alt={name}
@@ -42,13 +42,13 @@ const [iconSize, imageSize] = [30, 150];
     }
   </div>
   <p
-    class='mt-2 text-gray-700 dark:text-gray-300 text-md md:text-lg text-justify tracking-wide'
+    class='mt-2 text-gray-700 dark:text-gray-300 text-lg md:text-xl text-justify tracking-wide'
   >
     {summary}
   </p>
-  <div>
+  <div class='mt-5'>
     <a
-      class='inline-flex gap-2 items-center my-border'
+      class='inline-flex items-center my-border'
       href={resumePdf}
       target='_blank'
       rel='noopener noreferrer'
