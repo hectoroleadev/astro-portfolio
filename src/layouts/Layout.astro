@@ -11,6 +11,7 @@ interface Props {
 }
 
 const { title, site, description, image } = Astro.props;
+const mode = import.meta.env.MODE;
 ---
 
 <!doctype html>
@@ -36,7 +37,6 @@ const { title, site, description, image } = Astro.props;
     <Footer />
   </body>
 </html>
-
 <style is:global>
   body {
     font-family: 'Source Code Pro Variable', monospace;
@@ -72,5 +72,15 @@ const { title, site, description, image } = Astro.props;
     document.documentElement.classList.add('dark');
   } else {
     document.documentElement.classList.remove('dark');
+  }
+</script>
+
+<script is:inline define:vars={{ mode }}>
+  if (mode === 'production') {
+    addEventListener('load', () => {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js');
+      }
+    });
   }
 </script>
