@@ -45,7 +45,7 @@ const [iconSize, imageSize] = [30, 150];
             rel='noopener noreferrer'
           >
             <Icon name={icon} size={iconSize} />
-            <span class='smallLandscapeScreen:hidden'>{label}</span>
+            {label && <span class='smallLandscapeScreen:hidden'>{label}</span>}
           </a>
         ))
       }
