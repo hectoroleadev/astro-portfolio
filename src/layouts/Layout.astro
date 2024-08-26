@@ -18,13 +18,11 @@ const mode = import.meta.env.MODE;
 <html lang='en'>
   <head>
     <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <link rel='manifest' href='/manifest.json' />
     <link rel='icon' type='image/png' sizes='192x192' href='/maskable192.png' />
-    <link rel='icon' type='image/png' sizes='96x96' href='/maskable192.png' />
-    <link rel='icon' type='image/png' sizes='192x192' href='/rounded192.png' />
-    <link rel='icon' type='image/png' sizes='96x96' href='/rounded192.png' />
+    <link rel='icon' type='image/png' sizes='96x96' href='/maskable96.png' />
     <link
       rel='apple-touch-icon'
       type='image/png'
@@ -35,19 +33,7 @@ const mode = import.meta.env.MODE;
       rel='apple-touch-icon'
       type='image/png'
       sizes='96x96'
-      href='/maskable192.png'
-    />
-    <link
-      rel='apple-touch-icon'
-      type='image/png'
-      sizes='192x192'
-      href='/rounded192.png'
-    />
-    <link
-      rel='apple-touch-icon'
-      type='image/png'
-      sizes='96x96'
-      href='/rounded192.png'
+      href='/maskable96.png'
     />
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
@@ -56,7 +42,6 @@ const mode = import.meta.env.MODE;
     <meta property='og:title' content={title} />
     <meta property='og:description' content={description} />
     <meta property='og:image' content={image} />
-    <meta name='description' content='/' />
   </head>
   <body>
     <Header />
@@ -73,7 +58,7 @@ const mode = import.meta.env.MODE;
     font-variation-settings:
       'wdth' 75,
       'wght' 375;
-    @apply m-auto max-w-3xl bg-white text-gray-900 dark:bg-black dark:text-gray-50;
+    @apply m-auto max-w-2xl bg-white text-gray-900 dark:bg-black dark:text-gray-50;
   }
 
   h1 {

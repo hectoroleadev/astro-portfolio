@@ -3,31 +3,18 @@
   "background_color": "#ffffff",
   "icons": [
     {
-      "purpose": "maskable",
       "sizes": "96x96",
       "src": "maskable96.png",
       "type": "image/png"
     },
     {
-      "purpose": "maskable",
       "sizes": "192x192",
       "src": "maskable192.png",
-      "type": "image/png"
-    },
-    {
-      "purpose": "any",
-      "sizes": "96x96",
-      "src": "rounded96.png",
-      "type": "image/png"
-    },
-    {
-      "purpose": "any",
-      "sizes": "192x192",
-      "src": "rounded192.png",
       "type": "image/png"
     }
   ],
   "display": "standalone",
+  "start_url": ".",
   "lang": "en",
   "name": "hectoroleadev",
   "short_name": "hectoroleadev",
