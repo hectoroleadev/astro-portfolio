@@ -4,10 +4,14 @@ export default {
   darkMode: 'selector',
   theme: {
     extend: {
+      screens: {
+        smallLandscapeScreen: {
+          raw: '(max-height: 450px)',
+        },
+      },
       animation: {
         fade: 'fadeIn 1s ease-in-out',
       },
-
       keyframes: {
         fadeIn: {
           from: { opacity: 0 },
