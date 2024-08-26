@@ -1,28 +1,19 @@
-<svg width="100" height="100" viewBox="0 0 5 5" version="1.1" id="svg1"
-   xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-   <style>
-      .st {
-      stroke-width:0.29759
-      }
-
-      .st1 {
-      stroke: #000;
-      }
-
-      @media (prefers-color-scheme: dark) {
-      .st1 {
-      stroke: #fff;
-      }
-      }
-   </style>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="100"
+   height="100"
+   viewBox="0 0 5 5"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
    <g
       id="layer"
       transform="matrix(0.89098302,0,0,0.79208809,-55.88665,-113.49253)">
       <path
          id="path3"
-         style="fill:#000000;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:2;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+         style="fill:#000000;stroke:#888a85;stroke-width:0.29759;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:2;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
          d="m 66.565449,146.02736 -0.08165,0.17312 1.666048,0.7307 v 0.0186 l -1.26659,0.54105 v 0.21704 l 1.485181,-0.65732 v -0.22015 z m 0.01705,-0.48369 -1.03818,2.20348 -0.08061,0.17154 -0.195854,0.41548 h 0.21084 l 1.314648,-2.7905 z m -1.118795,2.37505 0.08062,-0.17157 -1.798857,-0.79736 v -0.0186 l 1.302246,-0.5457 v -0.21704 l -1.516186,0.66197 v 0.22015 z"
-         class="st st1"
          transform="translate(-0.4193851,-0.50000121)" />
    </g>
 </svg>
