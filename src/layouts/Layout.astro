@@ -49,6 +49,10 @@ const mode = import.meta.env.MODE;
       <slot />
     </main>
     <Footer />
+    <div id="notification" class="hidden fixed bottom-5 right-5 bg-gray-800 text-white p-4 rounded-lg shadow-lg">
+      <p>A new version is available!</p>
+      <button id="refresh-button" class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Refresh</button>
+    </div>
   </body>
 </html>
 <style is:global>
@@ -93,7 +97,18 @@ const mode = import.meta.env.MODE;
   if (mode === 'production') {
     addEventListener('load', () => {
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js');
+        navigator.serviceWorker.register('sw.js').then(registration => {
+          navigator.serviceWorker.addEventListener('message', event => {
+            if (event.data.type === 'NEW_VERSION') {
+              const notification = document.getElementById('notification');
+              notification.classList.remove('hidden');
+              document.getElementById('refresh-button').addEventListener('click', () => {
+                registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+                window.location.reload();
+              });
+            }
+          });
+        });
       }
     });
   }

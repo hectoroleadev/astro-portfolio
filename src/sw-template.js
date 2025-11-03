@@ -15,3 +15,17 @@ precacheAndRoute(self.__WB_MANIFEST);
 cacheFirstRoutes.forEach((route) => {
   registerRoute(new RegExp(route), new CacheFirst());
 });
+
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
+
+self.addEventListener('install', () => {
+  self.clients.matchAll().then((clients) => {
+    clients.forEach((client) => {
+      client.postMessage({ type: 'NEW_VERSION' });
+    });
+  });
+});
