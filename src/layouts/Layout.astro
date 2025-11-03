@@ -38,10 +38,22 @@ const mode = import.meta.env.MODE;
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
     <meta name='description' content={description} />
+    <meta name='keywords' content='full stack developer, devops, astro, tailwind, typescript' />
+
+    <!-- Open Graph -->
+    <meta property='og:type' content='website' />
+    <meta property='og:url' content={Astro.url} />
     <meta property='og:site_name' content={site} />
     <meta property='og:title' content={title} />
     <meta property='og:description' content={description} />
     <meta property='og:image' content={image} />
+
+    <!-- Twitter -->
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta name='twitter:url' content={Astro.url} />
+    <meta name='twitter:title' content={title} />
+    <meta name='twitter:description' content={description} />
+    <meta name='twitter:image' content={image} />
   </head>
   <body>
     <Header />
