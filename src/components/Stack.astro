@@ -1,0 +1,19 @@
+---
+import cv from '@cv';
+import { Image } from 'astro:assets';
+
+const {
+  stack: { sectionLabel, logos },
+} = cv;
+---
+
+<section class="py-8">
+  <h2 class="text-2xl font-bold mb-4">{sectionLabel}</h2>
+  <div class="flex flex-wrap justify-center gap-4">
+    {logos.map(({ src, alt }) => (
+      <div class="flex items-center justify-center p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
+        <Image src={src} alt={alt} width={64} height={64} class="h-16 w-16" />
+      </div>
+    ))}
+  </div>
+</section>

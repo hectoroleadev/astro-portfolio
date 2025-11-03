@@ -72,74 +72,9 @@
   "stack": {
     "sectionLabel": "My stack",
     "logos": [
-      { "src": "/logos/astro.svg", "alt": "AstroJS Logo" },
-      { "src": "/logos/vercel.svg", "alt": "Vercel Logo" },
-      { "src": "/logos/tailwindcss.svg", "alt": "TailwindCSS Logo" },
-      { "src": "/logos/typescript.svg", "alt": "TypeScript Logo" },
-      { "src": "/logos/css.svg", "alt": "CSS Logo" },
-      { "src": "/logos/html5.svg", "alt": "HTML Logo" },
-      { "src": "/logos/astro.svg", "alt": "AstroJS Logo" },
-      { "src": "/logos/vercel.svg", "alt": "Vercel Logo" },
-      { "src": "/logos/tailwindcss.svg", "alt": "TailwindCSS Logo" },
-      { "src": "/logos/typescript.svg", "alt": "TypeScript Logo" },
-      { "src": "/logos/css.svg", "alt": "CSS Logo" },
-      { "src": "/logos/html5.svg", "alt": "HTML Logo" }
-    ]
-  },
-  "personalProjects": {
-    "sectionLabel": "Personal projects",
-    "projects": [
-      {
-        "name": "LiteFolio",
-        "description": "This is a starter template web portfolio. It is designed to be a starting point to showcase your work and help you stand out from the crowd. Perfect for developers, designers, and other professionals.",
-        "imageUrl": "/assets/project.png",
-        "projectSocials": [
-          {
-            "network": "GitHub",
-            "label": "GitHub",
-            "url": "https://github.com/gonzalochale/litefolio"
-          },
-          {
-            "network": "Demo",
-            "label": "Demo",
-            "url": "https://litefolio.vercel.app/"
-          }
-        ]
-      },
-      {
-        "name": "LiteFolio",
-        "description": "This is a starter template web portfolio. It is designed to be a starting point to showcase your work and help you stand out from the crowd. Perfect for developers, designers, and other professionals.",
-        "imageUrl": "/assets/project.png",
-        "projectSocials": [
-          {
-            "network": "GitHub",
-            "label": "GitHub",
-            "url": "https://github.com/gonzalochale/litefolio"
-          },
-          {
-            "network": "Demo",
-            "label": "Demo",
-            "url": "https://litefolio.vercel.app/"
-          }
-        ]
-      },
-      {
-        "name": "LiteFolio",
-        "description": "This is a starter template web portfolio. It is designed to be a starting point to showcase your work and help you stand out from the crowd. Perfect for developers, designers, and other professionals.",
-        "imageUrl": "/assets/project.png",
-        "projectSocials": [
-          {
-            "network": "GitHub",
-            "label": "GitHub",
-            "url": "https://github.com/gonzalochale/litefolio"
-          },
-          {
-            "network": "Demo",
-            "label": "Demo",
-            "url": "https://litefolio.vercel.app/"
-          }
-        ]
-      }
+      { "src": "/logos/astro.svg", "alt": "Astro" },
+      { "src": "/logos/typescript.svg", "alt": "TypeScript" },
+      { "src": "/logos/tailwindcss.svg", "alt": "Tailwind CSS" }
     ]
   }
 }
