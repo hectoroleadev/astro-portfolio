@@ -52,6 +52,17 @@
         "highlights": []
       },
       {
+        "company": "Capgemini",
+        "position": "Full-Stack Developer",
+        "startDate": "2024-10-01",
+        "endDate": "2025-01-31",
+        "summary": "Supported and maintained an Insurance Angular application backed by two Java-based microservices.",
+        "highlights": [
+          "Refactored 30% of the Java codebase to align with Spring Boot best practices, improving maintainability and scalability",
+          "Introduced JUnit testing to the microservices, increasing code coverage from 0% to 20% and enhancing overall code quality and reliability"
+        ]
+      },
+      {
         "company": "IBM",
         "position": "Software Engineer",
         "startDate": "2023-12-01",
