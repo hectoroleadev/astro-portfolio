@@ -111,11 +111,11 @@ function getSocialAriaLabel(
     if (avatar) {
       if (avatar.complete) {
         avatar.classList.remove('image-placeholder');
+      } else {
+        avatar.addEventListener('load', () => {
+          avatar.classList.remove('image-placeholder');
+        });
       }
-    } else {
-      avatar.addEventListener('load', () => {
-        avatar.classList.remove('image-placeholder');
-      });
     }
   });
 </script>
