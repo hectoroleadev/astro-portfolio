@@ -16,17 +16,16 @@ const {
         <div class='flex flex-wrap justify-start gap-4 md:gap-6'>
           {logos.map(({ src, alt }) => (
             <div
-              class='flex items-center justify-center  p-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105'
+              class='flex items-center justify-center  p-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group'
               role='img'
               aria-label={alt}
-              title={alt}
             >
               <img
                 src={src}
                 alt={alt}
                 width='64'
                 height='64'
-                class='h-12 w-12 md:h-18 md:w-18 object-contain brightness-0 dark:invert'
+                class='h-9 w-9 md:h-12 md:w-12 object-contain brightness-0 dark:invert image-placeholder image-placeholder'
                 loading='lazy'
               />
             </div>
@@ -36,3 +35,21 @@ const {
     ))
   }
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll(
+      '#tech-stack img.image-placeholder'
+    );
+    images.forEach((img) => {
+      const image = img as HTMLImageElement;
+      if (image.complete) {
+        image.classList.remove('image-placeholder');
+      } else {
+        image.addEventListener('load', () => {
+          image.classList.remove('image-placeholder');
+        });
+      }
+    });
+  });
+</script>

@@ -15,7 +15,9 @@ const { title, site, description, image } = Astro.props;
 const mode = import.meta.env.MODE;
 const { basics } = cv;
 const siteUrl = Astro.site || new URL(Astro.url.pathname, Astro.url.origin);
-const fullImageUrl = image.startsWith('http') ? image : new URL(image, siteUrl).toString();
+const fullImageUrl = image.startsWith('http')
+  ? image
+  : new URL(image, siteUrl).toString();
 ---
 
 <!doctype html>
@@ -41,29 +43,35 @@ const fullImageUrl = image.startsWith('http') ? image : new URL(image, siteUrl).
     />
     <!-- Preconnect to external domains for performance -->
     <link rel='preconnect' href='https://storage.hectorolea.dev' crossorigin />
-    
+
     <meta name='generator' content={Astro.generator} />
     <meta name='author' content={basics.name} />
     <title>{title}</title>
     <meta name='description' content={description} />
-    <meta name='keywords' content='full stack developer, devops, astro, tailwind, typescript' />
-    
+    <meta
+      name='keywords'
+      content='full stack developer, devops, astro, tailwind, typescript'
+    />
+
     <!-- Structured Data (JSON-LD) -->
-    <script type='application/ld+json' set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'Person',
-      name: basics.name,
-      jobTitle: basics.label,
-      description: description,
-      image: basics.avatar,
-      url: siteUrl.toString(),
-      sameAs: cv.connect.socials.map((social) => social.url),
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: basics.location.city,
-        addressCountry: basics.location.countryCode,
-      },
-    })} />
+    <script
+      type='application/ld+json'
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: basics.name,
+        jobTitle: basics.label,
+        description: description,
+        image: basics.avatar,
+        url: siteUrl.toString(),
+        sameAs: cv.connect.socials.map((social) => social.url),
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: basics.location.city,
+          addressCountry: basics.location.countryCode,
+        },
+      })}
+    />
 
     <!-- Open Graph -->
     <meta property='og:type' content='website' />
@@ -82,35 +90,65 @@ const fullImageUrl = image.startsWith('http') ? image : new URL(image, siteUrl).
   </head>
   <body>
     <Header />
-    <main role='main'>
+    <main role='main' class='fade-in'>
       <slot />
     </main>
     <Footer />
     <button
       id='scroll-to-top'
       class='fixed bottom-6 right-6 z-40 hidden p-3 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-full shadow-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300 opacity-0 translate-y-4 focus:outline-none focus:ring-2 focus:ring-gray-500 dark:focus:ring-gray-400'
-      aria-label='Scroll to top'
-      title='Scroll to top'
     >
-      <svg
-        xmlns='http://www.w3.org/2000/svg'
-        fill='none'
-        viewBox='0 0 24 24'
-        stroke-width='2'
-        stroke='currentColor'
-        class='w-6 h-6'
-        aria-hidden='true'
-      >
-        <path
-          stroke-linecap='round'
-          stroke-linejoin='round'
-          d='M4.5 15.75l7.5-7.5 7.5 7.5'
-        />
-      </svg>
+      <span class='group' aria-label='Scroll to top'>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          fill='none'
+          viewBox='0 0 24 24'
+          stroke-width='2'
+          stroke='currentColor'
+          class='w-6 h-6'
+          aria-hidden='true'
+        >
+          <path
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            d='M4.5 15.75l7.5-7.5 7.5 7.5'></path>
+        </svg>
+      </span>
     </button>
-    <div id="notification" class="hidden fixed bottom-5 right-5 z-50 bg-gray-800 text-white p-4 rounded-lg shadow-lg" role="alert" aria-live="polite">
-      <p>A new version is available!</p>
-      <button id="refresh-button" class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200" aria-label="Refresh page to update">Refresh</button>
+    <!-- PWA Update Notification -->
+    <div
+      id='new-version-toast'
+      class='hidden fixed bottom-6 right-6 z-50 p-4 rounded-lg shadow-lg bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 flex items-center gap-4'
+      role='alert'
+      aria-live='assertive'
+    >
+      <p class='text-sm'>A new version is available.</p>
+      <div class='flex gap-2'>
+        <button
+          id='pwa-refresh'
+          class='px-4 py-1 text-sm font-semibold rounded-md border border-gray-200 dark:border-gray-700 hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors'
+        >
+          Refresh
+        </button>
+        <button
+          id='pwa-close'
+          class='p-1 hover:bg-gray-800 dark:hover:bg-gray-200 rounded-full'
+        >
+          <span class='group' aria-label='Close update notification'>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              class='h-5 w-5'
+              viewBox='0 0 20 20'
+              fill='currentColor'
+            >
+              <path
+                fill-rule='evenodd'
+                d='M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z'
+                clip-rule='evenodd'></path>
+            </svg>
+          </span>
+        </button>
+      </div>
     </div>
   </body>
 </html>
@@ -126,7 +164,39 @@ const fullImageUrl = image.startsWith('http') ? image : new URL(image, siteUrl).
       'wdth' 75,
       'wght' 375;
     @apply m-auto max-w-2xl bg-white text-gray-900 dark:bg-black dark:text-gray-50;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-color: #e5e7eb;
+    } /* gray-200 */
+    50% {
+      background-color: #d1d5db;
+    } /* gray-300 */
+    100% {
+      background-color: #e5e7eb;
+    } /* gray-200 */
+  }
+
+  .image-placeholder {
+    animation: shimmer 1.5s infinite;
+    @apply bg-gray-200 dark:bg-gray-800;
   }
 
   #scroll-to-top.visible {
@@ -148,6 +218,36 @@ const fullImageUrl = image.startsWith('http') ? image : new URL(image, siteUrl).
     font-variation-settings:
       'wdth' 75,
       'wght' 325;
+  }
+
+  [data-tooltip] {
+    position: relative;
+  }
+
+  [data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%; /* Above the element */
+    left: 0%; /* To the left of the element */
+    transform: none;
+    padding: 0.3em 0.5em; /* Smaller padding */
+    border-radius: 0.25em;
+    background-color: rgba(51, 51, 51, 0.75);
+    color: #fff;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.2s,
+      visibility 0.2s;
+    margin-bottom: 0.25rem; /* Smaller space between element and tooltip */
+    font-size: 0.85rem; /* Smaller font size */
+    z-index: 999;
+  }
+
+  [data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
   }
 </style>
 <script is:inline>
@@ -175,29 +275,67 @@ const fullImageUrl = image.startsWith('http') ? image : new URL(image, siteUrl).
     };
 
     window.addEventListener('scroll', toggleScrollButton);
-    
+
     scrollToTopButton.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 </script>
 
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const elementsWithAriaLabel = document.querySelectorAll('[aria-label]');
+    elementsWithAriaLabel.forEach((element) => {
+      const ariaLabel = element.getAttribute('aria-label');
+      if (ariaLabel) {
+        element.setAttribute('data-tooltip', ariaLabel);
+      }
+    });
+  });
+</script>
+
 <script is:inline define:vars={{ mode }}>
-  if (mode === 'production') {
-    addEventListener('load', () => {
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js').then(registration => {
-          navigator.serviceWorker.addEventListener('message', event => {
-            if (event.data.type === 'NEW_VERSION') {
-              const notification = document.getElementById('notification');
-              notification.classList.remove('hidden');
-              document.getElementById('refresh-button').addEventListener('click', () => {
-                registration.waiting.postMessage({ type: 'SKIP_WAITING' });
-                window.location.reload();
-              });
-            }
-          });
+  if (mode === 'production' && 'serviceWorker' in navigator) {
+    const toast = document.getElementById('new-version-toast');
+    const refreshButton = document.getElementById('pwa-refresh');
+    const closeButton = document.getElementById('pwa-close');
+
+    let newWorker;
+
+    const showUpdateToast = (worker) => {
+      newWorker = worker;
+      toast.classList.remove('hidden');
+    };
+
+    closeButton.addEventListener('click', () => {
+      toast.classList.add('hidden');
+    });
+
+    refreshButton.addEventListener('click', () => {
+      if (newWorker) {
+        newWorker.postMessage({ type: 'SKIP_WAITING' });
+      }
+    });
+
+    navigator.serviceWorker.register('sw.js').then((reg) => {
+      reg.addEventListener('updatefound', () => {
+        const installingWorker = reg.installing;
+        installingWorker.addEventListener('statechange', () => {
+          if (
+            installingWorker.state === 'installed' &&
+            navigator.serviceWorker.controller
+          ) {
+            showUpdateToast(installingWorker);
+          }
         });
+      });
+    });
+
+    let refreshing = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (!refreshing) {
+        window.location.reload();
+        refreshing = true;
       }
     });
   }

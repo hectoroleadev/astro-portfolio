@@ -15,11 +15,12 @@ const [iconSize, imageSize] = [30, 150];
   <!-- Avatar Section -->
   <div class='mb-6'>
     <Image
+      id="profile-avatar"
       src={avatar}
       alt={`${name} - ${label}`}
       height={imageSize}
       width={imageSize}
-      class='size-32 md:size-40 lg:size-48 rounded-2xl md:rounded-3xl my-border mx-auto'
+      class='size-32 md:size-40 lg:size-48 mx-auto rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 image-placeholder'
       loading='eager'
       fetchpriority='high'
       title={`${name} - ${label}`}
@@ -50,11 +51,10 @@ const [iconSize, imageSize] = [30, 150];
           socials.map(({ url, label, icon, network }) => (
             <a
               href={url}
-              class='inline-flex items-center gap-2 px-4 py-2 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105'
+              class='inline-flex items-center gap-2 px-4 py-2 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group'
               target='_blank'
               rel='noopener noreferrer'
               aria-label={`Visit ${network} profile${label ? `: ${label}` : ''}`}
-              title={`Visit ${network} profile${label ? `: ${label}` : ''}`}
             >
               <Icon name={icon} size={iconSize} aria-hidden='true' />
               {label && <span class='text-sm'>{label}</span>}
@@ -67,12 +67,11 @@ const [iconSize, imageSize] = [30, 150];
     <!-- Resume Download -->
     <div class='flex justify-center'>
       <a
-        class='inline-flex items-center gap-2 px-4 py-2 rounded-lg dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105'
+        class='inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-900 text-white dark:bg-gray-100 dark:text-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group'
         href={resumePdf}
         target='_blank'
         rel='noopener noreferrer'
         aria-label='Download resume PDF'
-        title='Download resume PDF'
       >
         <Icon name='download' size={iconSize} aria-hidden='true' />
         <span class='text-sm'>Download Resume</span>
@@ -94,3 +93,18 @@ const [iconSize, imageSize] = [30, 150];
     @apply transition-colors duration-300;
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const avatar = document.getElementById('profile-avatar') as HTMLImageElement;
+    if (avatar) {
+      if (avatar.complete) {
+        avatar.classList.remove('image-placeholder');
+      } else {
+        avatar.addEventListener('load', () => {
+          avatar.classList.remove('image-placeholder');
+        });
+      }
+    }
+  });
+</script>
