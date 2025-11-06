@@ -142,9 +142,6 @@ Edit `cv.json` to customize your portfolio content:
   },
   "stack": {
     "logos": [...]
-  },
-  "personalProjects": {
-    "projects": [...]
   }
 }
 ```

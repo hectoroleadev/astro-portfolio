@@ -1,5 +1,5 @@
 importScripts(
-  'https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js'
+  'https://storage.googleapis.com/workbox-cdn/releases/7.1.0/workbox-sw.js'
 );
 
 const { registerRoute } = workbox.routing;

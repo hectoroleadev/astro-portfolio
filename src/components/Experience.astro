@@ -1,0 +1,50 @@
+---
+import cv from '@cv';
+
+const {
+  experience: { sectionLabel, jobs },
+} = cv;
+
+function formatDate(dateString: string): string {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+}
+
+function formatDateRange(startDate: string, endDate: string | null | undefined): string {
+  const start = formatDate(startDate);
+  const end = endDate ? formatDate(endDate) : 'Present';
+  return `${start} - ${end}`;
+}
+---
+
+<section class="py-8 px-5">
+  <h2 class="text-2xl font-bold mb-6">{sectionLabel}</h2>
+  <div class="space-y-8">
+    {jobs.map((job) => (
+      <article class="border-l-2 border-gray-950 dark:border-gray-50 pl-6 relative">
+        <div class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-gray-950 dark:bg-gray-50"></div>
+        <div class="mb-2">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-50">
+            {job.position}
+          </h3>
+          <p class="text-lg text-gray-700 dark:text-gray-300 font-medium">
+            {job.company}
+          </p>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+            {formatDateRange(job.startDate, job.endDate)}
+          </p>
+        </div>
+        <p class="text-gray-700 dark:text-gray-300 mb-3 text-justify leading-relaxed">
+          {job.summary}
+        </p>
+        {job.highlights && job.highlights.length > 0 && (
+          <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+            {job.highlights.map((highlight) => (
+              <li class="text-justify">{highlight}</li>
+            ))}
+          </ul>
+        )}
+      </article>
+    ))}
+  </div>
+</section>
