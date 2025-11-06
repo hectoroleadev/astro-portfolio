@@ -3,7 +3,7 @@
     "name": "hector olea",
     "label": "full-stack developer",
     "avatar": "https://storage.hectorolea.dev/hector-olea.jpg",
-    "summary": "As a full-stack developer with a DevOps mindset, I enjoy discovering new technologies, programming languages, frameworks, and software architectures.",
+    "summary": "Full Stack Developer specialized in Java and microservices. Experienced in delivering testable, maintainable software with a hands-on approach to clean code, pyramid testing, and DevOps practices. Proficient in Spring Boot, Kafka, Event-Driven Architecture, and React/Angular.",
     "siteName": "hectoroleadev",
     "resumePdf": "https://storage.hectorolea.dev/hector-olea-resume.pdf",
     "siteLogo": "/logo.svg",
@@ -44,28 +44,77 @@
     "sectionLabel": "Work experience",
     "jobs": [
       {
-        "company": "Acme",
+        "company": "Tata Consulting Services",
+        "position": "Full Stack Developer",
+        "startDate": "2025-02-01",
+        "endDate": null,
+        "summary": "",
+        "highlights": []
+      },
+      {
+        "company": "IBM",
         "position": "Software Engineer",
-        "startDate": "2020-01-01",
-        "endDate": "2024-07-31",
-        "summary": "I worked on the Acme team, where I helped build the Y feature. I was responsible for Z, which involved A, B, and C.",
+        "startDate": "2023-12-01",
+        "endDate": "2024-03-31",
+        "summary": "Supported a Financial Analytics application, ensuring its stability and performance.",
         "highlights": [
-          "Developed a new feature for the Acme platform",
-          "Worked on the Y project, which involved A, B, and C",
-          "Collaborated with the Z team to improve the X platform"
+          "Resolved incidents and tasks efficiently using ServiceNow, addressing user-reported issues and implementing timely solutions to minimize downtime"
         ]
       },
       {
-        "company": "Y (Formerly X)",
-        "position": "Software Engineer",
-        "startDate": "2018-01-01",
-        "endDate": "2019-12-31",
-        "summary": "I worked on the Y team, where I helped build the Z feature. I was responsible for A, which involved B, C, and D.",
+        "company": "IBM",
+        "position": "Full-Stack Developer",
+        "startDate": "2023-01-01",
+        "endDate": "2023-11-30",
+        "summary": "Developed a microservice for Banking application to merge customer database information using an SSN identifier.",
         "highlights": [
-          "Developed a new feature for the Y platform",
-          "Worked on the Z project, which involved B, C, and D",
-          "Collaborated with the A team to improve the Y platform"
+          "Enhanced microservices responsible for storing case and product information by adding new features, increasing functionality and user satisfaction",
+          "Implemented initial tests for existing microservices, enhancing reliability"
         ]
+      },
+      {
+        "company": "Softtek",
+        "position": "Full-Stack Developer",
+        "startDate": "2020-09-01",
+        "endDate": "2022-12-31",
+        "summary": "Maintained, supported, and developed new features for 15 microservices built with Spring Boot and Node.js, ensuring high performance and scalability.",
+        "highlights": [
+          "Automated daily support tasks by creating bash and Python scripts, improving efficiency and reducing manual effort",
+          "Successfully migrated to the Walmart Cloud Native platform, achieving cost reduction, faster deployment, auto-scaling, and enhanced maintainability",
+          "Migrated Event Hubs and Armory to Apache Kafka, improving service resilience and minimizing event loss",
+          "Implemented fault-tolerant approaches for HTTP clients and databases, ensuring system reliability under high loads",
+          "Resolved critical vulnerabilities by upgrading the Spring Boot version, updating Docker base images, and modernizing project dependencies"
+        ]
+      },
+      {
+        "company": "Softtek",
+        "position": "Site Reliability Engineer",
+        "startDate": "2017-08-01",
+        "endDate": "2020-09-30",
+        "summary": "Automated repetitive processes in Airline Company to streamline operations, reducing manual effort and improving efficiency for the operations team.",
+        "highlights": [
+          "Developed Python and bash scripts to automate services to enhance monitoring and reporting capabilities",
+          "Designed and implemented REST APIs to automate incident management in ServiceNow, reducing response times and improving workflow efficiency"
+        ]
+      },
+      {
+        "company": "Softtek",
+        "position": "Java Web Developer",
+        "startDate": "2015-05-01",
+        "endDate": "2017-08-31",
+        "summary": "Supported and Maintained an Invoicing application capable of retrieving transactions from plain text files via FTP interfaces, ensuring seamless data integration and processing.",
+        "highlights": [
+          "Optimized SQL queries and PL/SQL procedures in an Oracle database, improving query performance and system efficiency",
+          "Implemented SQL Loader to rapidly load and save thousands of transactions, enhancing data processing speed and reducing manual effort"
+        ]
+      },
+      {
+        "company": "INEGI",
+        "position": "Java Web Developer",
+        "startDate": "2010-03-01",
+        "endDate": "2015-05-31",
+        "summary": "Maintained and supported the SIMBAD database system, which housed census data for Mexico, ensuring accuracy and optimal performance.",
+        "highlights": []
       }
     ]
   },
