@@ -9,13 +9,23 @@ const {
 } = cv;
 
 const [iconSize, imageSize] = [30, 150];
+
+function getSocialAriaLabel(
+  network: string,
+  labelText: string | undefined
+): string {
+  if (network === 'email') {
+    return `Send me an email: ${labelText}`;
+  }
+  return `Visit my ${network} profile${labelText ? `: ${labelText}` : ''}`;
+}
 ---
 
 <div class='flex flex-col items-center text-center max-w-3xl mx-auto'>
   <!-- Avatar Section -->
   <div class='mb-6'>
     <Image
-      id="profile-avatar"
+      id='profile-avatar'
       src={avatar}
       alt={`${name} - ${label}`}
       height={imageSize}
@@ -54,10 +64,9 @@ const [iconSize, imageSize] = [30, 150];
               class='inline-flex items-center gap-2 px-4 py-2 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group'
               target='_blank'
               rel='noopener noreferrer'
-              aria-label={`Visit ${network} profile${label ? `: ${label}` : ''}`}
+              aria-label={getSocialAriaLabel(network, label)}
             >
               <Icon name={icon} size={iconSize} aria-hidden='true' />
-              {label && <span class='text-sm'>{label}</span>}
             </a>
           ))
         }
@@ -96,15 +105,17 @@ const [iconSize, imageSize] = [30, 150];
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const avatar = document.getElementById('profile-avatar') as HTMLImageElement;
+    const avatar = document.getElementById(
+      'profile-avatar'
+    ) as HTMLImageElement;
     if (avatar) {
       if (avatar.complete) {
         avatar.classList.remove('image-placeholder');
-      } else {
-        avatar.addEventListener('load', () => {
-          avatar.classList.remove('image-placeholder');
-        });
       }
+    } else {
+      avatar.addEventListener('load', () => {
+        avatar.classList.remove('image-placeholder');
+      });
     }
   });
 </script>
