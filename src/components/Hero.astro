@@ -11,46 +11,50 @@ const {
 const [iconSize, imageSize] = [30, 150];
 ---
 
-<div class='flex flex-col md:flex-row md:items-center md:gap-8 lg:gap-12'>
+<div class='flex flex-col items-center text-center max-w-3xl mx-auto'>
   <!-- Avatar Section -->
-  <div class='flex-shrink-0 mb-6 md:mb-0'>
-    <div class='flex justify-center md:justify-start'>
-      <Image
-        src={avatar}
-        alt={`${name} - ${label}`}
-        height={imageSize}
-        width={imageSize}
-        class='size-32 md:size-40 lg:size-48 rounded-2xl md:rounded-3xl my-border transition-transform duration-300 hover:scale-105'
-        loading='eager'
-        fetchpriority='high'
-      />
-    </div>
+  <div class='mb-6'>
+    <Image
+      src={avatar}
+      alt={`${name} - ${label}`}
+      height={imageSize}
+      width={imageSize}
+      class='size-32 md:size-40 lg:size-48 rounded-2xl md:rounded-3xl my-border mx-auto'
+      loading='eager'
+      fetchpriority='high'
+      title={`${name} - ${label}`}
+    />
   </div>
 
   <!-- Content Section -->
-  <div class='flex-1 text-center md:text-left'>
-    <h1 class='text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-2'>
+  <div class='w-full'>
+    <h1 class='text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-3'>
       {name}
     </h1>
-    <h2 class='text-2xl md:text-3xl lg:text-4xl text-gray-700 dark:text-gray-300 font-medium tracking-wide mb-6'>
+    <h2
+      class='text-2xl md:text-3xl lg:text-4xl text-gray-700 dark:text-gray-300 font-medium tracking-wide mb-6'
+    >
       {label}
     </h2>
-    
-    <p class='text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-300 mb-6 leading-relaxed max-w-2xl mx-auto md:mx-0'>
+
+    <p
+      class='text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed px-4 md:px-0'
+    >
       {summary}
     </p>
 
-    <!-- Social Links & Resume -->
-    <div class='flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4'>
+    <!-- Social Links -->
+    <div class='mb-6'>
       <div class='flex flex-wrap justify-center gap-2'>
         {
           socials.map(({ url, label, icon, network }) => (
             <a
               href={url}
-              class='inline-flex items-center gap-2 px-4 py-2 my-border rounded-lg hover:scale-105 transition-all duration-200'
+              class='inline-flex items-center gap-2 px-4 py-2 my-border rounded-lg dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm'
               target='_blank'
               rel='noopener noreferrer'
               aria-label={`Visit ${network} profile${label ? `: ${label}` : ''}`}
+              title={`Visit ${network} profile${label ? `: ${label}` : ''}`}
             >
               <Icon name={icon} size={iconSize} aria-hidden='true' />
               {label && <span class='text-sm'>{label}</span>}
@@ -58,12 +62,17 @@ const [iconSize, imageSize] = [30, 150];
           ))
         }
       </div>
+    </div>
+
+    <!-- Resume Download -->
+    <div class='flex justify-center'>
       <a
-        class='inline-flex items-center gap-2 px-4 py-2 my-border rounded-lg hover:scale-105 transition-all duration-200'
+        class='inline-flex items-center gap-2 px-4 py-2 my-border rounded-lg dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105'
         href={resumePdf}
         target='_blank'
         rel='noopener noreferrer'
         aria-label='Download resume PDF'
+        title='Download resume PDF'
       >
         <Icon name='download' size={iconSize} aria-hidden='true' />
         <span class='text-sm'>Download Resume</span>
@@ -80,7 +89,7 @@ const [iconSize, imageSize] = [30, 150];
   .my-border {
     @apply border border-gray-950 dark:border-gray-50 transition-colors duration-300;
   }
-  
+
   .my-border:hover {
     @apply transition-colors duration-300;
   }

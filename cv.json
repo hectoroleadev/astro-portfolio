@@ -1,9 +1,9 @@
 {
   "basics": {
-    "name": "hector olea",
-    "label": "full-stack developer",
+    "name": "Hector Olea",
+    "label": "Full-stack developer",
     "avatar": "https://storage.hectorolea.dev/hector-olea.jpg",
-    "summary": "Full Stack Developer specialized in Java and microservices. Experienced in delivering testable, maintainable software with a hands-on approach to clean code, pyramid testing, and DevOps practices. Proficient in Spring Boot, Kafka, Event-Driven Architecture, and React/Angular.",
+    "summary": "Full Stack Developer specialized in Java and microservices. I enjoy discovering new technologies, programming languages, frameworks, and software architectures.",
     "siteName": "hectoroleadev",
     "resumePdf": "https://storage.hectorolea.dev/hector-olea-resume.pdf",
     "siteLogo": "/logo.svg",
@@ -130,11 +130,58 @@
     ]
   },
   "stack": {
-    "sectionLabel": "My stack",
-    "logos": [
-      { "src": "/logos/astro.svg", "alt": "Astro" },
-      { "src": "/logos/typescript.svg", "alt": "TypeScript" },
-      { "src": "/logos/tailwindcss.svg", "alt": "Tailwind CSS" }
+    "sectionLabel": "Tech stack",
+    "categories": [
+      {
+        "name": "Languages",
+        "logos": [
+          { "src": "/logos/java.svg", "alt": "Java" },
+          { "src": "/logos/javascript.svg", "alt": "JavaScript" },
+          { "src": "/logos/typescript.svg", "alt": "TypeScript" },
+          { "src": "/logos/python.svg", "alt": "Python" }
+        ]
+      },
+      {
+        "name": "Frontend",
+        "logos": [
+          { "src": "/logos/angular.svg", "alt": "Angular" },
+          { "src": "/logos/react.svg", "alt": "React" },
+          { "src": "/logos/redux.svg", "alt": "Redux" },
+          { "src": "/logos/bootstrap.svg", "alt": "Bootstrap" },
+          { "src": "/logos/tailwindcss.svg", "alt": "Tailwind CSS" }
+        ]
+      },
+      {
+        "name": "Backend",
+        "logos": [
+          { "src": "/logos/spring-boot.svg", "alt": "Spring Boot" },
+          { "src": "/logos/spring-cloud.svg", "alt": "Spring Cloud" },
+          { "src": "/logos/nodejs.svg", "alt": "Node.js" }
+        ]
+      },
+      {
+        "name": "Data",
+        "logos": [
+          { "src": "/logos/postgresql.svg", "alt": "PostgreSQL" },
+          { "src": "/logos/mongodb.svg", "alt": "MongoDB" },
+          { "src": "/logos/kafka.svg", "alt": "Kafka" },
+          { "src": "/logos/graphql.svg", "alt": "GraphQL" },
+          { "src": "/logos/oracle.svg", "alt": "Oracle" }
+        ]
+      },
+      {
+        "name": "DevOps & Tools",
+        "logos": [
+          { "src": "/logos/kubernetes.svg", "alt": "Kubernetes" },
+          { "src": "/logos/docker.svg", "alt": "Docker" },
+          { "src": "/logos/terraform.svg", "alt": "Terraform" },
+          { "src": "/logos/jenkins.svg", "alt": "Jenkins" },
+          { "src": "/logos/maven.svg", "alt": "Maven" },
+          { "src": "/logos/gradle.svg", "alt": "Gradle" },
+          { "src": "/logos/git.svg", "alt": "Git" },
+          { "src": "/logos/aws.svg", "alt": "AWS" }
+        ]
+      }
     ]
   }
 }
