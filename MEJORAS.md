@@ -39,16 +39,20 @@
 ### 6. **UX/UI**
 - ✅ Transiciones suaves en cambio de tema (0.3s ease)
 - ✅ Transiciones de color en todos los elementos
+- ✅ Botón "scroll to top" con animación suave
+- ✅ Scroll suave entre secciones
+- ✅ Mejor estructura semántica del footer (`role="contentinfo"`)
 - ⚠️ Loading states y fallbacks pendientes (se pueden agregar después)
-- ✅ **Completado**: Transiciones mejoradas implementadas
+- ✅ **Completado**: Transiciones y navegación mejoradas
 
 ## 🟢 Mejoras (Baja Prioridad)
 
 ### 7. **Funcionalidad Adicional**
+- ✅ Scroll suave entre secciones (CSS `scroll-behavior: smooth`)
+- ✅ Botón "scroll to top" con animación y accesibilidad
+- ✅ IDs en secciones para mejor navegación
 - 💡 Internacionalización (i18n) para ES/EN
 - 💡 Analytics opcional (Plausible, Google Analytics)
-- 💡 Scroll suave entre secciones
-- 💡 Botón "scroll to top"
 
 ### 8. **Testing y Calidad**
 - 💡 Tests unitarios con Vitest

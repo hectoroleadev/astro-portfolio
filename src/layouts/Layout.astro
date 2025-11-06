@@ -86,13 +86,39 @@ const fullImageUrl = image.startsWith('http') ? image : new URL(image, siteUrl).
       <slot />
     </main>
     <Footer />
-    <div id="notification" class="hidden fixed bottom-5 right-5 bg-gray-800 text-white p-4 rounded-lg shadow-lg" role="alert" aria-live="polite">
+    <button
+      id='scroll-to-top'
+      class='fixed bottom-6 right-6 z-40 hidden p-3 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-full shadow-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300 opacity-0 translate-y-4 focus:outline-none focus:ring-2 focus:ring-gray-500 dark:focus:ring-gray-400'
+      aria-label='Scroll to top'
+      title='Scroll to top'
+    >
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke-width='2'
+        stroke='currentColor'
+        class='w-6 h-6'
+        aria-hidden='true'
+      >
+        <path
+          stroke-linecap='round'
+          stroke-linejoin='round'
+          d='M4.5 15.75l7.5-7.5 7.5 7.5'
+        />
+      </svg>
+    </button>
+    <div id="notification" class="hidden fixed bottom-5 right-5 z-50 bg-gray-800 text-white p-4 rounded-lg shadow-lg" role="alert" aria-live="polite">
       <p>A new version is available!</p>
       <button id="refresh-button" class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200" aria-label="Refresh page to update">Refresh</button>
     </div>
   </body>
 </html>
 <style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: 'Source Code Pro Variable', monospace;
     font-weight: 375;
@@ -101,6 +127,11 @@ const fullImageUrl = image.startsWith('http') ? image : new URL(image, siteUrl).
       'wght' 375;
     @apply m-auto max-w-2xl bg-white text-gray-900 dark:bg-black dark:text-gray-50;
     transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  #scroll-to-top.visible {
+    @apply opacity-100 translate-y-0;
+    display: block;
   }
 
   h1 {
@@ -128,6 +159,26 @@ const fullImageUrl = image.startsWith('http') ? image : new URL(image, siteUrl).
     document.documentElement.classList.add('dark');
   } else {
     document.documentElement.classList.remove('dark');
+  }
+</script>
+
+<script is:inline>
+  // Scroll to top button
+  const scrollToTopButton = document.getElementById('scroll-to-top');
+  if (scrollToTopButton) {
+    const toggleScrollButton = () => {
+      if (window.scrollY > 300) {
+        scrollToTopButton.classList.add('visible');
+      } else {
+        scrollToTopButton.classList.remove('visible');
+      }
+    };
+
+    window.addEventListener('scroll', toggleScrollButton);
+    
+    scrollToTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 </script>
 
