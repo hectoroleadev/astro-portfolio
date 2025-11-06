@@ -11,62 +11,62 @@ const {
 const [iconSize, imageSize] = [30, 150];
 ---
 
-<div
-  class='grid grid-cols-1 gap-y-3 landscape:smallLandscapeScreen:grid-cols-2 text-center'
->
-  <div class='grid gap-y-3'>
-    <div class='flex justify-center'>
+<div class='flex flex-col md:flex-row md:items-center md:gap-8 lg:gap-12'>
+  <!-- Avatar Section -->
+  <div class='flex-shrink-0 mb-6 md:mb-0'>
+    <div class='flex justify-center md:justify-start'>
       <Image
         src={avatar}
         alt={`${name} - ${label}`}
         height={imageSize}
         width={imageSize}
-        class='size-40 rounded-3xl my-border'
+        class='size-32 md:size-40 lg:size-48 rounded-2xl md:rounded-3xl my-border transition-transform duration-300 hover:scale-105'
         loading='eager'
         fetchpriority='high'
       />
     </div>
-    <h1 class='text-3xl md:text-4xl tracking-tight'>
+  </div>
+
+  <!-- Content Section -->
+  <div class='flex-1 text-center md:text-left'>
+    <h1 class='text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-2'>
       {name}
     </h1>
-    <h2
-      class='text-2xl md:text-3xl smallLandscapeScreen:text-2xl tracking-wide leading-tight'
-    >
+    <h2 class='text-2xl md:text-3xl lg:text-4xl text-gray-700 dark:text-gray-300 font-medium tracking-wide mb-6'>
       {label}
     </h2>
-  </div>
-  <div class='grid gap-y-3 smallLandscapeScreen:gap-y-2'>
-    <div class='flex flex-wrap justify-center mt-2'>
-      {
-        socials.map(({ url, label, icon, network }) => (
-          <a
-            href={url}
-            class='pointer-events-auto inline-flex gap-2 items-center my-border'
-            target='_blank'
-            rel='noopener noreferrer'
-            aria-label={`Visit ${network} profile${label ? `: ${label}` : ''}`}
-          >
-            <Icon name={icon} size={iconSize} aria-hidden='true' />
-            {label && <span class='smallLandscapeScreen:hidden'>{label}</span>}
-          </a>
-        ))
-      }
-    </div>
-    <p
-      class='mt-2 text-gray-700 dark:text-gray-300 text-lg md:text-xl text-justify tracking-wide'
-    >
+    
+    <p class='text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-300 mb-6 leading-relaxed max-w-2xl mx-auto md:mx-0'>
       {summary}
     </p>
-    <div class='mt-4'>
+
+    <!-- Social Links & Resume -->
+    <div class='flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4'>
+      <div class='flex flex-wrap justify-center gap-2'>
+        {
+          socials.map(({ url, label, icon, network }) => (
+            <a
+              href={url}
+              class='inline-flex items-center gap-2 px-4 py-2 my-border rounded-lg hover:scale-105 transition-all duration-200'
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label={`Visit ${network} profile${label ? `: ${label}` : ''}`}
+            >
+              <Icon name={icon} size={iconSize} aria-hidden='true' />
+              {label && <span class='text-sm'>{label}</span>}
+            </a>
+          ))
+        }
+      </div>
       <a
-        class='inline-flex items-center gap-2 my-border'
+        class='inline-flex items-center gap-2 px-4 py-2 my-border rounded-lg hover:scale-105 transition-all duration-200'
         href={resumePdf}
         target='_blank'
         rel='noopener noreferrer'
         aria-label='Download resume PDF'
       >
         <Icon name='download' size={iconSize} aria-hidden='true' />
-        <span>download my resume</span>
+        <span class='text-sm'>Download Resume</span>
       </a>
     </div>
   </div>
@@ -75,9 +75,6 @@ const [iconSize, imageSize] = [30, 150];
 <style>
   .my-hover {
     @apply hover:bg-gray-950 hover:text-gray-50 hover:dark:bg-gray-50 hover:dark:text-gray-950;
-  }
-  a {
-    @apply text-sm py-1 px-2 m-2 rounded-lg my-hover transition-all ease-in-out duration-300  hover:border-transparent;
   }
 
   .my-border {
