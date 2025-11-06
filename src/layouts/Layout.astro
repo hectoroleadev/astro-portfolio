@@ -2,6 +2,7 @@
 import Footer from '@/components/shared/Footer.astro';
 import Header from '@/components/shared/Header.astro';
 import '@fontsource-variable/source-code-pro';
+import cv from '@cv';
 
 interface Props {
   title: string;
@@ -12,6 +13,9 @@ interface Props {
 
 const { title, site, description, image } = Astro.props;
 const mode = import.meta.env.MODE;
+const { basics } = cv;
+const siteUrl = Astro.site || new URL(Astro.url.pathname, Astro.url.origin);
+const fullImageUrl = image.startsWith('http') ? image : new URL(image, siteUrl).toString();
 ---
 
 <!doctype html>
@@ -35,10 +39,31 @@ const mode = import.meta.env.MODE;
       sizes='96x96'
       href='/maskable96.png'
     />
+    <!-- Preconnect to external domains for performance -->
+    <link rel='preconnect' href='https://storage.hectorolea.dev' crossorigin />
+    
     <meta name='generator' content={Astro.generator} />
+    <meta name='author' content={basics.name} />
     <title>{title}</title>
     <meta name='description' content={description} />
     <meta name='keywords' content='full stack developer, devops, astro, tailwind, typescript' />
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type='application/ld+json' set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: basics.name,
+      jobTitle: basics.label,
+      description: description,
+      image: basics.avatar,
+      url: siteUrl.toString(),
+      sameAs: cv.connect.socials.map((social) => social.url),
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: basics.location.city,
+        addressCountry: basics.location.countryCode,
+      },
+    })} />
 
     <!-- Open Graph -->
     <meta property='og:type' content='website' />
@@ -46,24 +71,24 @@ const mode = import.meta.env.MODE;
     <meta property='og:site_name' content={site} />
     <meta property='og:title' content={title} />
     <meta property='og:description' content={description} />
-    <meta property='og:image' content={image} />
+    <meta property='og:image' content={fullImageUrl} />
 
     <!-- Twitter -->
     <meta name='twitter:card' content='summary_large_image' />
     <meta name='twitter:url' content={Astro.url} />
     <meta name='twitter:title' content={title} />
     <meta name='twitter:description' content={description} />
-    <meta name='twitter:image' content={image} />
+    <meta name='twitter:image' content={fullImageUrl} />
   </head>
   <body>
     <Header />
-    <main>
+    <main role='main'>
       <slot />
     </main>
     <Footer />
-    <div id="notification" class="hidden fixed bottom-5 right-5 bg-gray-800 text-white p-4 rounded-lg shadow-lg">
+    <div id="notification" class="hidden fixed bottom-5 right-5 bg-gray-800 text-white p-4 rounded-lg shadow-lg" role="alert" aria-live="polite">
       <p>A new version is available!</p>
-      <button id="refresh-button" class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Refresh</button>
+      <button id="refresh-button" class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200" aria-label="Refresh page to update">Refresh</button>
     </div>
   </body>
 </html>
@@ -75,6 +100,7 @@ const mode = import.meta.env.MODE;
       'wdth' 75,
       'wght' 375;
     @apply m-auto max-w-2xl bg-white text-gray-900 dark:bg-black dark:text-gray-50;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   h1 {

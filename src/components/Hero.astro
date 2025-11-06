@@ -18,11 +18,12 @@ const [iconSize, imageSize] = [30, 150];
     <div class='flex justify-center'>
       <Image
         src={avatar}
-        alt={name}
+        alt={`${name} - ${label}`}
         height={imageSize}
         width={imageSize}
         class='size-40 rounded-3xl my-border'
         loading='eager'
+        fetchpriority='high'
       />
     </div>
     <h1 class='text-3xl md:text-4xl tracking-tight'>
@@ -37,14 +38,15 @@ const [iconSize, imageSize] = [30, 150];
   <div class='grid gap-y-3 smallLandscapeScreen:gap-y-2'>
     <div class='flex flex-wrap justify-center mt-2'>
       {
-        socials.map(({ url, label, icon }) => (
+        socials.map(({ url, label, icon, network }) => (
           <a
             href={url}
             class='pointer-events-auto inline-flex gap-2 items-center my-border'
             target='_blank'
             rel='noopener noreferrer'
+            aria-label={`Visit ${network} profile${label ? `: ${label}` : ''}`}
           >
-            <Icon name={icon} size={iconSize} />
+            <Icon name={icon} size={iconSize} aria-hidden='true' />
             {label && <span class='smallLandscapeScreen:hidden'>{label}</span>}
           </a>
         ))
@@ -61,8 +63,9 @@ const [iconSize, imageSize] = [30, 150];
         href={resumePdf}
         target='_blank'
         rel='noopener noreferrer'
+        aria-label='Download resume PDF'
       >
-        <Icon name='download' size={iconSize} />
+        <Icon name='download' size={iconSize} aria-hidden='true' />
         <span>download my resume</span>
       </a>
     </div>
@@ -78,6 +81,10 @@ const [iconSize, imageSize] = [30, 150];
   }
 
   .my-border {
-    @apply border border-gray-950 dark:border-gray-50;
+    @apply border border-gray-950 dark:border-gray-50 transition-colors duration-300;
+  }
+  
+  .my-border:hover {
+    @apply transition-colors duration-300;
   }
 </style>

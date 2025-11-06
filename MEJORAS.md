@@ -14,29 +14,33 @@
 ## 🟡 Importantes (Media Prioridad)
 
 ### 3. **Accesibilidad (A11y)**
-- ❌ Botón de tema sin `aria-label`
-- ❌ Falta `role="navigation"` en header
-- ❌ Falta `role="main"` en main
-- ❌ Enlaces sociales podrían tener mejor `aria-label`
-- ✅ **Acción**: Agregar atributos ARIA y roles semánticos
+- ✅ Botón de tema con `aria-label` y `aria-pressed`
+- ✅ `role="navigation"` en header con `aria-label`
+- ✅ `role="main"` en main
+- ✅ Enlaces sociales con `aria-label` descriptivos
+- ✅ Iconos decorativos con `aria-hidden="true"`
+- ✅ Sección de experiencia con `aria-labelledby`
+- ✅ Notificación PWA con `role="alert"` y `aria-live`
+- ✅ **Completado**: Atributos ARIA y roles semánticos agregados
 
 ### 4. **SEO Mejorable**
-- ❌ Falta structured data (JSON-LD) para Person/ProfessionalService
-- ❌ `lang='en'` pero el desarrollador es de México (podría ser bilingüe)
-- ❌ Falta meta tag `author`
-- ✅ **Acción**: Agregar JSON-LD y mejorar meta tags
+- ✅ Structured data (JSON-LD) para Person agregado
+- ⚠️ `lang='en'` (se mantiene, pero se puede cambiar a bilingüe en el futuro)
+- ✅ Meta tag `author` agregado
+- ✅ URLs absolutas para Open Graph images
+- ✅ **Completado**: JSON-LD y meta tags mejorados
 
 ### 5. **Rendimiento**
-- ❌ Imagen externa del avatar sin `preconnect` o `fetchpriority`
-- ❌ Logos del stack no tienen lazy loading
-- ❌ No hay preconnect para `storage.hectorolea.dev`
-- ✅ **Acción**: Optimizar carga de recursos externos
+- ✅ `preconnect` para `storage.hectorolea.dev` agregado
+- ✅ `fetchpriority="high"` en avatar
+- ✅ Lazy loading en logos del stack
+- ✅ **Completado**: Optimización de carga de recursos externos
 
 ### 6. **UX/UI**
-- ❌ Transición de tema es instantánea (sin animación suave)
-- ❌ No hay loading states para imágenes
-- ❌ No hay fallback si imágenes externas fallan
-- ✅ **Acción**: Mejorar transiciones y manejo de errores
+- ✅ Transiciones suaves en cambio de tema (0.3s ease)
+- ✅ Transiciones de color en todos los elementos
+- ⚠️ Loading states y fallbacks pendientes (se pueden agregar después)
+- ✅ **Completado**: Transiciones mejoradas implementadas
 
 ## 🟢 Mejoras (Baja Prioridad)
 

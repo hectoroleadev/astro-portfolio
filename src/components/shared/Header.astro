@@ -11,9 +11,9 @@ const [iconSize, logoSize] = [24, 30];
 ---
 
 <header class='p-5'>
-  <nav class='flex justify-between items-center top-0 z-10'>
+  <nav class='flex justify-between items-center top-0 z-10' role='navigation' aria-label='Main navigation'>
     <h1 class='text-2xl text-gray-800 dark:text-gray-50 font-bold'>
-      <a href='/' class='inline-flex'>
+      <a href='/' class='inline-flex' aria-label={`${siteName} - Home`}>
         <Image
           src={siteLogo}
           alt={siteName}
@@ -28,11 +28,16 @@ const [iconSize, logoSize] = [24, 30];
     <div class='flex items-center'>
       <ul class='flex items-center space-x-6'>
         <li>
-          <button type='button' id='theme-selector'>
-            <span class='hidden dark:inline'
+          <button 
+            type='button' 
+            id='theme-selector'
+            aria-label='Toggle dark mode'
+            aria-pressed='false'
+          >
+            <span class='hidden dark:inline' aria-hidden='true'
               ><Icon name='sun' size={iconSize} /></span
             >
-            <span class='dark:hidden'><Icon name='moon' size={iconSize} /></span
+            <span class='dark:hidden' aria-hidden='true'><Icon name='moon' size={iconSize} /></span
             >
           </button>
         </li>
@@ -42,8 +47,20 @@ const [iconSize, logoSize] = [24, 30];
 </header>
 
 <script>
-  document.getElementById('theme-selector')?.addEventListener('click', () => {
-    localStorage.theme = localStorage.theme === 'dark' ? 'light' : 'dark';
-    document.documentElement.classList.toggle('dark');
-  });
+  const themeSelector = document.getElementById('theme-selector');
+  if (themeSelector) {
+    // Update aria-pressed based on current theme
+    const updateAriaPressed = () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      themeSelector.setAttribute('aria-pressed', String(isDark));
+    };
+    
+    updateAriaPressed();
+    
+    themeSelector.addEventListener('click', () => {
+      localStorage.theme = localStorage.theme === 'dark' ? 'light' : 'dark';
+      document.documentElement.classList.toggle('dark');
+      updateAriaPressed();
+    });
+  }
 </script>
