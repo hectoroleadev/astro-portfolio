@@ -38,7 +38,7 @@ const [iconSize, imageSize] = [30, 150];
     </h2>
 
     <p
-      class='text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed px-4 md:px-0'
+      class='text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed px-4 md:px-0 text-justify'
     >
       {summary}
     </p>
@@ -50,7 +50,7 @@ const [iconSize, imageSize] = [30, 150];
           socials.map(({ url, label, icon, network }) => (
             <a
               href={url}
-              class='inline-flex items-center gap-2 px-4 py-2 my-border rounded-lg dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm'
+              class='inline-flex items-center gap-2 px-4 py-2 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105'
               target='_blank'
               rel='noopener noreferrer'
               aria-label={`Visit ${network} profile${label ? `: ${label}` : ''}`}
@@ -67,7 +67,7 @@ const [iconSize, imageSize] = [30, 150];
     <!-- Resume Download -->
     <div class='flex justify-center'>
       <a
-        class='inline-flex items-center gap-2 px-4 py-2 my-border rounded-lg dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105'
+        class='inline-flex items-center gap-2 px-4 py-2 rounded-lg dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105'
         href={resumePdf}
         target='_blank'
         rel='noopener noreferrer'

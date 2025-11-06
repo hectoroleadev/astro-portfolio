@@ -1,9 +1,9 @@
 {
   "basics": {
     "name": "Hector Olea",
-    "label": "Full-stack developer",
+    "label": "Full-Stack Developer",
     "avatar": "https://storage.hectorolea.dev/hector-olea.jpg",
-    "summary": "Full Stack Developer specialized in Java and microservices. I enjoy discovering new technologies, programming languages, frameworks, and software architectures.",
+    "summary": "Full-Stack Developer with more than 10 years of experience building and scaling robust applications. I specialize in the Java and microservices ecosystem to create efficient solutions that have reduced operational costs and improved maintainability for leading companies.",
     "siteName": "hectoroleadev",
     "resumePdf": "https://storage.hectorolea.dev/hector-olea-resume.pdf",
     "siteLogo": "/logo.svg",
@@ -45,78 +45,78 @@
     "jobs": [
       {
         "company": "Tata Consulting Services",
-        "position": "Full Stack Developer",
-        "startDate": "2025-02-01",
+        "position": "Full-Stack Developer",
+        "startDate": "2025-09-01",
         "endDate": null,
         "summary": "",
         "highlights": []
       },
       {
-        "company": "Capgemini",
+        "company": "Capgemini (at MetLife)",
         "position": "Full-Stack Developer",
         "startDate": "2024-10-01",
         "endDate": "2025-01-31",
         "summary": "Supported and maintained an Insurance Angular application backed by two Java-based microservices.",
         "highlights": [
-          "Refactored 30% of the Java codebase to align with Spring Boot best practices, improving maintainability and scalability",
-          "Introduced JUnit testing to the microservices, increasing code coverage from 0% to 20% and enhancing overall code quality and reliability"
+          "Refactored 30% of the Java codebase to align with Spring Boot best practices, improving maintainability and scalability.",
+          "Introduced JUnit testing to the microservices, increasing code coverage from 0% to 20% and enhancing overall code quality and reliability."
         ]
       },
       {
-        "company": "IBM",
+        "company": "IBM (at Dun & Bradstreet)",
         "position": "Software Engineer",
         "startDate": "2023-12-01",
         "endDate": "2024-03-31",
         "summary": "Supported a Financial Analytics application, ensuring its stability and performance.",
         "highlights": [
-          "Resolved incidents and tasks efficiently using ServiceNow, addressing user-reported issues and implementing timely solutions to minimize downtime"
+          "Resolved incidents and tasks efficiently using ServiceNow, addressing user-reported issues and implementing timely solutions to minimize downtime."
         ]
       },
       {
-        "company": "IBM",
+        "company": "IBM (at Discovey)",
         "position": "Full-Stack Developer",
         "startDate": "2023-01-01",
         "endDate": "2023-11-30",
         "summary": "Developed a microservice for Banking application to merge customer database information using an SSN identifier.",
         "highlights": [
-          "Enhanced microservices responsible for storing case and product information by adding new features, increasing functionality and user satisfaction",
-          "Implemented initial tests for existing microservices, enhancing reliability"
+          "Enhanced microservices responsible for storing case and product information by adding new features, increasing functionality and user satisfaction.",
+          "Implemented initial tests for existing microservices, enhancing reliability."
         ]
       },
       {
-        "company": "Softtek",
+        "company": "Softtek (at Walmart)",
         "position": "Full-Stack Developer",
         "startDate": "2020-09-01",
         "endDate": "2022-12-31",
         "summary": "Maintained, supported, and developed new features for 15 microservices built with Spring Boot and Node.js, ensuring high performance and scalability.",
         "highlights": [
-          "Automated daily support tasks by creating bash and Python scripts, improving efficiency and reducing manual effort",
-          "Successfully migrated to the Walmart Cloud Native platform, achieving cost reduction, faster deployment, auto-scaling, and enhanced maintainability",
-          "Migrated Event Hubs and Armory to Apache Kafka, improving service resilience and minimizing event loss",
-          "Implemented fault-tolerant approaches for HTTP clients and databases, ensuring system reliability under high loads",
-          "Resolved critical vulnerabilities by upgrading the Spring Boot version, updating Docker base images, and modernizing project dependencies"
+          "Automated daily support tasks by creating bash and Python scripts, improving efficiency and reducing manual effort.",
+          "Successfully migrated to the Walmart Cloud Native platform, achieving cost reduction, faster deployment, auto-scaling, and enhanced maintainability.",
+          "Migrated Event Hubs and Armory to Apache Kafka, improving service resilience and minimizing event loss.",
+          "Implemented fault-tolerant approaches for HTTP clients and databases, ensuring system reliability under high loads.",
+          "Resolved critical vulnerabilities by upgrading the Spring Boot version, updating Docker base images, and modernizing project dependencies."
         ]
       },
       {
-        "company": "Softtek",
+        "company": "Softtek (at Sourthwest Airlines)",
         "position": "Site Reliability Engineer",
         "startDate": "2017-08-01",
         "endDate": "2020-09-30",
         "summary": "Automated repetitive processes in Airline Company to streamline operations, reducing manual effort and improving efficiency for the operations team.",
         "highlights": [
-          "Developed Python and bash scripts to automate services to enhance monitoring and reporting capabilities",
-          "Designed and implemented REST APIs to automate incident management in ServiceNow, reducing response times and improving workflow efficiency"
+          "Developed Python and bash scripts to automate services to enhance monitoring and reporting capabilities.",
+          "Designed and implemented REST APIs to automate incident management in ServiceNow, reducing response times and improving workflow efficiency."
         ]
       },
       {
-        "company": "Softtek",
+        "company": "Softtek (at General Electric)",
         "position": "Java Web Developer",
         "startDate": "2015-05-01",
         "endDate": "2017-08-31",
         "summary": "Supported and Maintained an Invoicing application capable of retrieving transactions from plain text files via FTP interfaces, ensuring seamless data integration and processing.",
         "highlights": [
-          "Optimized SQL queries and PL/SQL procedures in an Oracle database, improving query performance and system efficiency",
-          "Implemented SQL Loader to rapidly load and save thousands of transactions, enhancing data processing speed and reducing manual effort"
+          "Optimized SQL queries and PL/SQL procedures in an Oracle database, improving query performance and system efficiency.",
+          "Implemented SQL Loader to rapidly load and save thousands of transactions, enhancing data processing speed and reducing manual effort."
         ]
       },
       {
@@ -137,26 +137,26 @@
         "logos": [
           { "src": "/logos/java.svg", "alt": "Java" },
           { "src": "/logos/javascript.svg", "alt": "JavaScript" },
-          { "src": "/logos/typescript.svg", "alt": "TypeScript" },
-          { "src": "/logos/python.svg", "alt": "Python" }
+          { "src": "/logos/python.svg", "alt": "Python" },
+          { "src": "/logos/typescript.svg", "alt": "TypeScript" }
         ]
       },
       {
         "name": "Frontend",
         "logos": [
-          { "src": "/logos/angular.svg", "alt": "Angular" },
           { "src": "/logos/react.svg", "alt": "React" },
-          { "src": "/logos/redux.svg", "alt": "Redux" },
+          { "src": "/logos/angular.svg", "alt": "Angular" },
+          { "src": "/logos/tailwindcss.svg", "alt": "Tailwind CSS" },
           { "src": "/logos/bootstrap.svg", "alt": "Bootstrap" },
-          { "src": "/logos/tailwindcss.svg", "alt": "Tailwind CSS" }
+          { "src": "/logos/redux.svg", "alt": "Redux" }
         ]
       },
       {
         "name": "Backend",
         "logos": [
           { "src": "/logos/spring-boot.svg", "alt": "Spring Boot" },
-          { "src": "/logos/spring-cloud.svg", "alt": "Spring Cloud" },
-          { "src": "/logos/nodejs.svg", "alt": "Node.js" }
+          { "src": "/logos/nodejs.svg", "alt": "Node.js" },
+          { "src": "/logos/spring-cloud.svg", "alt": "Spring Cloud" }
         ]
       },
       {
@@ -172,14 +172,14 @@
       {
         "name": "DevOps & Tools",
         "logos": [
-          { "src": "/logos/kubernetes.svg", "alt": "Kubernetes" },
+          { "src": "/logos/aws.svg", "alt": "AWS" },
+          { "src": "/logos/git.svg", "alt": "Git" },
           { "src": "/logos/docker.svg", "alt": "Docker" },
+          { "src": "/logos/kubernetes.svg", "alt": "Kubernetes" },
           { "src": "/logos/terraform.svg", "alt": "Terraform" },
           { "src": "/logos/jenkins.svg", "alt": "Jenkins" },
           { "src": "/logos/maven.svg", "alt": "Maven" },
-          { "src": "/logos/gradle.svg", "alt": "Gradle" },
-          { "src": "/logos/git.svg", "alt": "Git" },
-          { "src": "/logos/aws.svg", "alt": "AWS" }
+          { "src": "/logos/gradle.svg", "alt": "Gradle" }
         ]
       }
     ]
