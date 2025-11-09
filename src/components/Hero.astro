@@ -21,7 +21,7 @@ function getSocialAriaLabel(
 }
 ---
 
-<div class='flex flex-col items-center text-center max-w-3xl mx-auto'>
+<div class='flex flex-col items-center text-center'>
   <!-- Avatar Section -->
   <div class='mb-6'>
     <Image
@@ -30,7 +30,7 @@ function getSocialAriaLabel(
       alt={`${name} - ${label}`}
       height={imageSize}
       width={imageSize}
-      class='size-32 md:size-40 lg:size-48 mx-auto rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 image-placeholder'
+      class='size-40 md:size-44 lg:size-48 mx-auto rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 image-placeholder'
       loading='eager'
       fetchpriority='high'
       title={`${name} - ${label}`}
@@ -39,7 +39,7 @@ function getSocialAriaLabel(
 
   <!-- Content Section -->
   <div class='w-full'>
-    <h1 class='text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-3'>
+    <h1 class='text-4xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-3'>
       {name}
     </h1>
     <h2
@@ -47,12 +47,6 @@ function getSocialAriaLabel(
     >
       {label}
     </h2>
-
-    <p
-      class='text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed px-4 md:px-0 text-justify'
-    >
-      {summary}
-    </p>
 
     <!-- Social Links -->
     <div class='mb-6'>
@@ -72,6 +66,12 @@ function getSocialAriaLabel(
         }
       </div>
     </div>
+
+    <p
+      class='text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed px-4 md:px-0 text-justify'
+    >
+      {summary}
+    </p>
 
     <!-- Resume Download -->
     <div class='flex justify-center'>
