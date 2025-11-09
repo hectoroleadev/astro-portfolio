@@ -56,10 +56,9 @@
         "position": "Full-Stack Developer",
         "startDate": "2024-10-01",
         "endDate": "2025-01-31",
-        "summary": "Supported and maintained an Insurance Angular application backed by two Java-based microservices.",
+        "summary": "Maintained and enhanced an Insurance application built with Angular and Java microservices, refactoring 30% of the codebase to align with Spring Boot best practices for better scalability and maintainability.",
         "highlights": [
-          "Refactored 30% of the Java codebase to align with Spring Boot best practices, improving maintainability and scalability.",
-          "Introduced JUnit testing to the microservices, increasing code coverage from 0% to 20% and enhancing overall code quality and reliability."
+          "Implemented JUnit testing across services, raising code coverage from 0% to 20% and strengthening overall quality and reliability."          
         ]
       },
       {
@@ -77,10 +76,9 @@
         "position": "Full-Stack Developer",
         "startDate": "2023-01-01",
         "endDate": "2023-11-30",
-        "summary": "Developed a microservice for Banking application to merge customer database information using an SSN identifier.",
+        "summary": "Developed and enhanced microservices for a banking application, integrating customer data via SSN and extending case and product management capabilities to improve functionality and user satisfaction.",
         "highlights": [
-          "Enhanced microservices responsible for storing case and product information by adding new features, increasing functionality and user satisfaction.",
-          "Implemented initial tests for existing microservices, enhancing reliability."
+          "Implemented initial automated tests across existing microservices, increasing reliability and maintainability."          
         ]
       },
       {
@@ -91,21 +89,18 @@
         "summary": "Maintained, supported, and developed new features for 15 microservices built with Spring Boot and Node.js, ensuring high performance and scalability.",
         "highlights": [
           "Automated daily support tasks by creating bash and Python scripts, improving efficiency and reducing manual effort.",
-          "Successfully migrated to the Walmart Cloud Native platform, achieving cost reduction, faster deployment, auto-scaling, and enhanced maintainability.",
-          "Migrated Event Hubs and Armory to Apache Kafka, improving service resilience and minimizing event loss.",
-          "Implemented fault-tolerant approaches for HTTP clients and databases, ensuring system reliability under high loads.",
-          "Resolved critical vulnerabilities by upgrading the Spring Boot version, updating Docker base images, and modernizing project dependencies."
+          "Migrated services to Walmart’s Cloud Native platform and Apache Kafka, enhancing scalability, resilience, and deployment efficiency while reducing costs.",
+          "Improved system reliability and security by implementing fault-tolerant mechanisms and modernizing Spring Boot, Docker, and project dependencies."
         ]
       },
       {
-        "company": "Softtek (at Sourthwest Airlines)",
+        "company": "Softtek (at Southwest Airlines)",
         "position": "Site Reliability Engineer",
         "startDate": "2017-08-01",
         "endDate": "2020-09-30",
-        "summary": "Automated repetitive processes in Airline Company to streamline operations, reducing manual effort and improving efficiency for the operations team.",
+        "summary": "Automated repetitive processes in an Airline Company to streamline operations, reducing manual effort and improving efficiency for the operations team.",
         "highlights": [
-          "Developed Python and bash scripts to automate services to enhance monitoring and reporting capabilities.",
-          "Designed and implemented REST APIs to automate incident management in ServiceNow, reducing response times and improving workflow efficiency."
+          "Automated monitoring and incident management through Python/Bash scripting and REST APIs integrated with ServiceNow, improving reporting and reducing response times."          
         ]
       },
       {
@@ -113,10 +108,9 @@
         "position": "Java Web Developer",
         "startDate": "2015-05-01",
         "endDate": "2017-08-31",
-        "summary": "Supported and Maintained an Invoicing application capable of retrieving transactions from plain text files via FTP interfaces, ensuring seamless data integration and processing.",
+        "summary": "Supported and maintained an Invoicing application capable of retrieving transactions from plain text files via FTP interfaces, ensuring seamless data integration and processing.",
         "highlights": [
-          "Optimized SQL queries and PL/SQL procedures in an Oracle database, improving query performance and system efficiency.",
-          "Implemented SQL Loader to rapidly load and save thousands of transactions, enhancing data processing speed and reducing manual effort."
+          "Optimized Oracle database performance by tuning SQL/PLSQL code and automating bulk data loading with SQL Loader, significantly improving processing speed and efficiency."          
         ]
       },
       {
