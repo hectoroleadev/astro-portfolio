@@ -3,7 +3,7 @@
     "name": "Hector Olea",
     "label": "Full-Stack Developer",
     "avatar": "https://storage.hectorolea.dev/hector-olea.jpg",
-    "summary": "Full-Stack Developer with 12 years of experience designing, building, and scaling robust applications. Specialized in Java, Spring Boot, and microservices. Focused on delivering testable, maintainable software through clean code, solid testing, and modern DevOps practices.",
+    "summary": "Full-Stack Developer with 12 years of experience designing, modernizing, and scaling enterprise applications. Specialized in Java, Spring Boot, and microservices, with strong focus on clean architecture, automated testing, and event-driven systems using Kafka. I build reliable, maintainable software through solid engineering practices and modern DevOps workflows.",
     "siteName": "hectoroleadev",
     "resumePdf": "https://storage.hectorolea.dev/hector-olea-resume.pdf",
     "siteLogo": "/logo.svg",
@@ -49,16 +49,19 @@
         "startDate": "2025-09-01",
         "endDate": null,
         "summary": "",
-        "highlights": []
+        "highlights": [
+          "Strengthening backend architecture and microservices design as part of a strategic engineering team. Expanding expertise in scalable Java systems, cloud-native patterns, and event-driven architectures."
+        ]
       },
       {
         "company": "Capgemini (at MetLife)",
         "position": "Full-Stack Developer",
         "startDate": "2024-10-01",
         "endDate": "2025-01-31",
-        "summary": "Maintained and enhanced an Insurance application built with Angular and Java microservices, refactoring 30% of the codebase to align with Spring Boot best practices for better scalability and maintainability.",
+        "summary": "",
         "highlights": [
-          "Implemented JUnit testing across services, raising code coverage from 0% to 20% and strengthening overall quality and reliability."          
+          "Enhanced an insurance platform built with Angular and Java microservices, refactoring 30% of the codebase to align with Spring Boot best practices.",
+          "Implemented JUnit/Mockito testing, raising test coverage from 0% to 20% and improving system reliability."
         ]
       },
       {
@@ -66,9 +69,10 @@
         "position": "Software Engineer",
         "startDate": "2023-12-01",
         "endDate": "2024-03-31",
-        "summary": "Supported a Financial Analytics application, ensuring its stability and performance.",
+        "summary": "",
         "highlights": [
-          "Resolved incidents and tasks efficiently using ServiceNow, addressing user-reported issues and implementing timely solutions to minimize downtime."
+          "Ensured stability and performance of a financial analytics application by resolving incidents and optimizing workflows.",
+          "Improved response times through efficient incident management using ServiceNow."
         ]
       },
       {
@@ -76,9 +80,10 @@
         "position": "Full-Stack Developer",
         "startDate": "2023-01-01",
         "endDate": "2023-11-30",
-        "summary": "Developed and enhanced microservices for a banking application, integrating customer data via SSN and extending case and product management capabilities to improve functionality and user satisfaction.",
+        "summary": "",
         "highlights": [
-          "Implemented initial automated tests across existing microservices, increasing reliability and maintainability."          
+          "Developed and enhanced microservices for a banking platform, integrating customer data via SSN and expanding case and product management capabilities.",
+          "Added initial automated tests to legacy services, increasing maintainability."
         ]
       },
       {
@@ -86,11 +91,12 @@
         "position": "Full-Stack Developer",
         "startDate": "2020-09-01",
         "endDate": "2022-12-31",
-        "summary": "Maintained, supported, and developed new features for 15 microservices built with Spring Boot and Node.js, ensuring high performance and scalability.",
+        "summary": "Maintained and supported the SIMBAD census database system, ensuring data accuracy and stable performance.",
         "highlights": [
-          "Automated daily support tasks by creating bash and Python scripts, improving efficiency and reducing manual effort.",
-          "Migrated services to Walmart’s Cloud Native platform and Apache Kafka, enhancing scalability, resilience, and deployment efficiency while reducing costs.",
-          "Improved system reliability and security by implementing fault-tolerant mechanisms and modernizing Spring Boot, Docker, and project dependencies."
+          "Developed and maintained more than 15 microservices using Spring Boot and Node.js in a high-scale retail environment.",
+          "Automated support tasks with Bash and Python, improving operational efficiency.",
+          "Migrated services to Walmart’s Cloud Native platform and Kafka, improving scalability and reducing deployment complexity.",
+          "Modernized Spring Boot applications, Docker images, and project dependencies, improving security and stability."
         ]
       },
       {
@@ -98,9 +104,10 @@
         "position": "Site Reliability Engineer",
         "startDate": "2017-08-01",
         "endDate": "2020-09-30",
-        "summary": "Automated repetitive processes in an Airline Company to streamline operations, reducing manual effort and improving efficiency for the operations team.",
+        "summary": "",
         "highlights": [
-          "Automated monitoring and incident management through Python/Bash scripting and REST APIs integrated with ServiceNow, improving reporting and reducing response times."          
+          "Automated operational workflows for the airline, reducing manual effort and improving efficiency.",
+          "Built monitoring and incident-handling automations with Python/Bash and REST APIs integrated with ServiceNow."
         ]
       },
       {
@@ -108,9 +115,10 @@
         "position": "Java Web Developer",
         "startDate": "2015-05-01",
         "endDate": "2017-08-31",
-        "summary": "Supported and maintained an Invoicing application capable of retrieving transactions from plain text files via FTP interfaces, ensuring seamless data integration and processing.",
+        "summary": "",
         "highlights": [
-          "Optimized Oracle database performance by tuning SQL/PLSQL code and automating bulk data loading with SQL Loader, significantly improving processing speed and efficiency."          
+          "Maintained an invoicing system that processed transactions from FTP text files, ensuring reliable data integration.",
+          "Improved Oracle performance through SQL/PLSQL tuning and automated bulk data loading."
         ]
       },
       {
@@ -118,8 +126,10 @@
         "position": "Java Web Developer",
         "startDate": "2010-03-01",
         "endDate": "2015-05-31",
-        "summary": "Maintained and supported the SIMBAD database system, which housed census data for Mexico, ensuring accuracy and optimal performance.",
-        "highlights": []
+        "summary": "",
+        "highlights": [
+          "Maintained and supported the SIMBAD census database system, ensuring data accuracy and stable performance."
+        ]
       }
     ]
   },
