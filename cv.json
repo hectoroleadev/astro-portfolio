@@ -91,7 +91,7 @@
         "position": "Full-Stack Developer",
         "startDate": "2020-09-01",
         "endDate": "2022-12-31",
-        "summary": "Maintained and supported the SIMBAD census database system, ensuring data accuracy and stable performance.",
+        "summary": "",
         "highlights": [
           "Developed and maintained more than 15 microservices using Spring Boot and Node.js in a high-scale retail environment.",
           "Automated support tasks with Bash and Python, improving operational efficiency.",
