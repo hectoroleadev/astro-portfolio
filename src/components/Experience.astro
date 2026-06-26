@@ -9,63 +9,76 @@ const {
 
 function formatDate(dateString: string): string {
   const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', timeZone: 'UTC' });
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    timeZone: 'UTC',
+  });
 }
 
-function formatDateRange(startDate: string, endDate: string | null | undefined): string {
+function formatDateRange(
+  startDate: string,
+  endDate: string | null | undefined
+): string {
   const start = formatDate(startDate);
   const end = endDate ? formatDate(endDate) : 'Present';
   return `${start} - ${end}`;
 }
 ---
 
-<section class="py-8 px-5" aria-labelledby="experience-heading" id="work-experience">
-  <h2 id="experience-heading" class="text-2xl font-bold mb-6">{sectionLabel}</h2>
+<section
+  class="py-8 px-5"
+  aria-labelledby="experience-heading"
+  id="work-experience"
+>
+  <h2 id="experience-heading" class="text-2xl font-bold mb-6">
+    {sectionLabel}
+  </h2>
   <div class="space-y-8">
-    {jobs.map((job) => {
-      const isCurrent = job.endDate === null;
-      return (
-        <article
-          class="border-l-2 border-gray-950 dark:border-gray-50 pl-6 relative transition-colors duration-300"
-        >
-          <div
-            class:list={[
-              'absolute -left-2 top-0 w-4 h-4 rounded-full transition-colors duration-300',
-              isCurrent
-                ? 'bg-accent ring-4 ring-accent/20'
-                : 'bg-gray-950 dark:bg-gray-50',
-            ]}
-          />
-          <div class="mb-2">
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-50 transition-colors duration-300">
-              {job.position}
-            </h3>
-            <p class="text-lg text-gray-700 dark:text-gray-300 font-medium transition-colors duration-300">
-              {job.company}
-            </p>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 flex items-center gap-2 transition-colors duration-300">
-              <time>{formatDateRange(job.startDate, job.endDate)}</time>
-              {isCurrent && (
-                <span class="inline-flex items-center rounded-full bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent">
-                  Current
-                </span>
-              )}
-            </p>
-          </div>
-          {job.summary && (
-            <p class="text-gray-700 dark:text-gray-300 mb-3 text-left leading-relaxed transition-colors duration-300">
-              {job.summary}
-            </p>
-          )}
-          {job.highlights && job.highlights.length > 0 && (
-            <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300 transition-colors duration-300">
-              {job.highlights.map((highlight) => (
-                <li class="text-left">{highlight}</li>
-              ))}
-            </ul>
-          )}
-        </article>
-      );
-    })}
+    {
+      jobs.map((job) => {
+        const isCurrent = job.endDate === null;
+        return (
+          <article class="border-l-2 border-gray-950 dark:border-gray-50 pl-6 relative transition-colors duration-300">
+            <div
+              class:list={[
+                'absolute -left-2 top-0 w-4 h-4 rounded-full transition-colors duration-300',
+                isCurrent
+                  ? 'bg-accent ring-4 ring-accent/20'
+                  : 'bg-gray-950 dark:bg-gray-50',
+              ]}
+            />
+            <div class="mb-2">
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-50 transition-colors duration-300">
+                {job.position}
+              </h3>
+              <p class="text-lg text-gray-700 dark:text-gray-300 font-medium transition-colors duration-300">
+                {job.company}
+              </p>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 flex items-center gap-2 transition-colors duration-300">
+                <time>{formatDateRange(job.startDate, job.endDate)}</time>
+                {isCurrent && (
+                  <span class="inline-flex items-center rounded-full bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent">
+                    Current
+                  </span>
+                )}
+              </p>
+            </div>
+            {job.summary && (
+              <p class="text-gray-700 dark:text-gray-300 mb-3 text-left leading-relaxed transition-colors duration-300">
+                {job.summary}
+              </p>
+            )}
+            {job.highlights && job.highlights.length > 0 && (
+              <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300 transition-colors duration-300">
+                {job.highlights.map((highlight) => (
+                  <li class="text-left">{highlight}</li>
+                ))}
+              </ul>
+            )}
+          </article>
+        );
+      })
+    }
   </div>
 </section>

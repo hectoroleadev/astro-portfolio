@@ -95,14 +95,14 @@ npm run preview
 
 ### Commands
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm start` | Alias for `npm run dev` |
-| `npm run build` | Build for production with type checking and PWA |
-| `npm run preview` | Preview production build locally |
-| `npm run astro` | Run Astro CLI commands |
-| `npm run PWA` | Generate Service Worker (runs automatically on build) |
+| Command           | Description                                           |
+| ----------------- | ----------------------------------------------------- |
+| `npm run dev`     | Start development server                              |
+| `npm start`       | Alias for `npm run dev`                               |
+| `npm run build`   | Build for production with type checking and PWA       |
+| `npm run preview` | Preview production build locally                      |
+| `npm run astro`   | Run Astro CLI commands                                |
+| `npm run PWA`     | Generate Service Worker (runs automatically on build) |
 
 ## Configuration
 
@@ -193,9 +193,9 @@ Configured in `tsconfig.json`:
 ```
 
 Usage in components:
+
 ```astro
-import cv from '@cv';
-import Header from '@/components/shared/Header.astro';
+import cv from '@cv'; import Header from '@/components/shared/Header.astro';
 ```
 
 ## Deployment
@@ -210,6 +210,7 @@ This project includes a GitHub Actions workflow for automatic deployment:
 4. Workflow automatically builds and deploys
 
 The workflow (`deploy.yml`) handles:
+
 - Node.js setup (v18)
 - Dependency installation
 - Production build
@@ -263,12 +264,14 @@ module.exports = {
 ## Dark Mode
 
 Dark mode is implemented using:
+
 - Tailwind CSS `dark:` selector
 - localStorage for theme persistence
 - Automatic detection of system preference
 - Manual toggle in header
 
 Theme initialization script in `Layout.astro`:
+
 ```javascript
 if (
   localStorage.theme === 'dark' ||
@@ -282,16 +285,19 @@ if (
 ## Technology Stack
 
 ### Core
+
 - **Framework**: Astro 4.13.1
 - **Styling**: Tailwind CSS 3.4.7
 - **TypeScript**: 5.5.4
 
 ### Integrations
+
 - **Icons**: astro-icon 1.1.0
 - **Font**: @fontsource-variable/source-code-pro 5.0.19
 - **PWA**: workbox-cli 7.1.0
 
 ### Build Tools
+
 - **Type Checking**: @astrojs/check 0.9.1
 - **Tailwind Integration**: @astrojs/tailwind 5.1.0
 
@@ -305,12 +311,14 @@ if (
 ## Performance
 
 Target metrics:
+
 - Lighthouse Score: 100/100 (Performance, Accessibility, Best Practices, SEO)
 - First Contentful Paint: < 1s
 - Time to Interactive: < 2s
 - Cumulative Layout Shift: 0
 
 Optimizations included:
+
 - Static site generation
 - Image optimization with Astro's Image component
 - Minimal JavaScript bundle
@@ -320,12 +328,14 @@ Optimizations included:
 ## Development Best Practices
 
 ### Code Style
+
 - Font: Source Code Pro Variable with custom font-variation-settings
 - Responsive design with mobile-first approach
 - Semantic HTML5 elements
 - Accessible components with proper ARIA labels
 
 ### Git Workflow
+
 - Pull Request template included (`.github/PULL_REQUEST_TEMPLATE.md`)
 - Automated deployment on main branch
 - `.gitignore` configured for Astro projects
@@ -335,6 +345,7 @@ Optimizations included:
 ### Adding New Social Links
 
 Edit `cv.json`:
+
 ```json
 "socials": [
   {
@@ -357,6 +368,7 @@ Add corresponding icon in `src/icons/twitter.svg`
 ### Modifying Colors
 
 Update Tailwind classes in components or extend `tailwind.config.mjs`:
+
 ```javascript
 theme: {
   extend: {

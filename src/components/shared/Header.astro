@@ -10,36 +10,36 @@ const {
 const [iconSize, logoSize] = [24, 30];
 ---
 
-<header class='p-5'>
-  <nav class='flex justify-between items-center top-0 z-10' role='navigation'>
-    <h1 class='text-2xl text-gray-800 dark:text-gray-50 font-bold'>
-      <a href='/' class='inline-flex'>
+<header class="p-5">
+  <nav class="flex justify-between items-center top-0 z-10" role="navigation">
+    <h1 class="text-2xl text-gray-800 dark:text-gray-50 font-bold">
+      <a href="/" class="inline-flex">
         <Image
           src={siteLogo}
           alt={siteName}
           height={logoSize}
           width={logoSize}
-          loading='eager'
-          title=''
+          loading="eager"
+          title=""
         />
-        <span class='ml-2'>hectorolea</span>
-        <span class='text-[#888a85]'>dev</span>
+        <span class="ml-2">hectorolea</span>
+        <span class="text-[#888a85]">dev</span>
       </a>
     </h1>
-    <div class='flex items-center'>
-      <ul class='flex items-center space-x-6'>
+    <div class="flex items-center">
+      <ul class="flex items-center space-x-6">
         <li>
           <button
-            type='button'
-            id='theme-selector'
-            class='group'
-            aria-pressed='false'
+            type="button"
+            id="theme-selector"
+            class="group"
+            aria-pressed="false"
           >
-            <span class='hidden dark:inline' aria-hidden='true'
-              ><Icon name='sun' size={iconSize} /></span
+            <span class="hidden dark:inline" aria-hidden="true"
+              ><Icon name="sun" size={iconSize} /></span
             >
-            <span class='dark:hidden' aria-hidden='true'
-              ><Icon name='moon' size={iconSize} /></span
+            <span class="dark:hidden" aria-hidden="true"
+              ><Icon name="moon" size={iconSize} /></span
             >
           </button>
         </li>

@@ -23,46 +23,46 @@ function getSocialAriaLabel(
 }
 ---
 
-<div class='flex flex-col items-center text-center'>
+<div class="flex flex-col items-center text-center">
   <!-- Avatar Section -->
-  <div class='mb-6'>
+  <div class="mb-6">
     <Image
-      id='profile-avatar'
+      id="profile-avatar"
       src={avatar}
       alt={`${name} - ${label}`}
       height={imageSize}
       width={imageSize}
-      class='size-40 md:size-44 lg:size-48 mx-auto rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 image-placeholder'
-      loading='eager'
-      fetchpriority='high'
+      class="size-40 md:size-44 lg:size-48 mx-auto rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 image-placeholder"
+      loading="eager"
+      fetchpriority="high"
       title={`${name} - ${label}`}
     />
   </div>
 
   <!-- Content Section -->
-  <div class='w-full'>
-    <h1 class='text-4xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-3'>
+  <div class="w-full">
+    <h1 class="text-4xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-3">
       {name}
     </h1>
     <h2
-      class='text-2xl md:text-3xl lg:text-4xl text-gray-700 dark:text-gray-300 font-medium tracking-wide mb-6'
+      class="text-2xl md:text-3xl lg:text-4xl text-gray-700 dark:text-gray-300 font-medium tracking-wide mb-6"
     >
       {label}
     </h2>
 
     <!-- Social Links -->
-    <div class='mb-6'>
-      <div class='flex flex-wrap justify-center gap-2'>
+    <div class="mb-6">
+      <div class="flex flex-wrap justify-center gap-2">
         {
           socials.map(({ url, label, icon, network }) => (
             <a
               href={url}
-              class='inline-flex items-center gap-2 px-4 py-2 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group my-hover'
-              target='_blank'
-              rel='noopener noreferrer'
+              class="inline-flex items-center gap-2 px-4 py-2 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group my-hover"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label={getSocialAriaLabel(network, label)}
             >
-              <Icon name={icon} size={iconSize} aria-hidden='true' />
+              <Icon name={icon} size={iconSize} aria-hidden="true" />
             </a>
           ))
         }
@@ -70,22 +70,22 @@ function getSocialAriaLabel(
     </div>
 
     <p
-      class='text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed px-4 md:px-0 text-left'
+      class="text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed px-4 md:px-0 text-left"
     >
       {summary}
     </p>
 
     <!-- Resume Download -->
-    <div class='flex justify-center'>
+    <div class="flex justify-center">
       <a
-        class='inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-900 text-white dark:bg-gray-100 dark:text-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group my-hover'
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-900 text-white dark:bg-gray-100 dark:text-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group my-hover"
         href={resumePdf}
-        target='_blank'
-        rel='noopener noreferrer'
-        aria-label='Download resume PDF'
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Download resume PDF"
       >
-        <Icon name='download' size={iconSize} aria-hidden='true' />
-        <span class='text-sm'>Download Resume</span>
+        <Icon name="download" size={iconSize} aria-hidden="true" />
+        <span class="text-sm">Download Resume</span>
       </a>
     </div>
   </div>

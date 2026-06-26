@@ -24,48 +24,48 @@ const fullImageUrl = image.startsWith('http')
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang="en">
   <head>
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Conservative CSP. 'unsafe-inline' is required by the inline theme/SW
          scripts and Tailwind's injected styles; storage.googleapis.com is the
          Workbox CDN imported by the service worker. -->
     <meta
-      http-equiv='Content-Security-Policy'
+      http-equiv="Content-Security-Policy"
       content="default-src 'self'; img-src 'self' https://storage.hectorolea.dev data:; script-src 'self' 'unsafe-inline' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self' https://storage.hectorolea.dev https://storage.googleapis.com; worker-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'self'"
     />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <link rel='manifest' href='/manifest.json' />
-    <link rel='icon' type='image/png' sizes='192x192' href='/maskable192.png' />
-    <link rel='icon' type='image/png' sizes='96x96' href='/maskable96.png' />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/maskable192.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/maskable96.png" />
     <link
-      rel='apple-touch-icon'
-      type='image/png'
-      sizes='192x192'
-      href='/maskable192.png'
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="192x192"
+      href="/maskable192.png"
     />
     <link
-      rel='apple-touch-icon'
-      type='image/png'
-      sizes='96x96'
-      href='/maskable96.png'
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="96x96"
+      href="/maskable96.png"
     />
     <!-- Preconnect to external domains for performance -->
-    <link rel='preconnect' href='https://storage.hectorolea.dev' crossorigin />
+    <link rel="preconnect" href="https://storage.hectorolea.dev" crossorigin />
 
-    <meta name='generator' content={Astro.generator} />
-    <meta name='author' content={basics.name} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="author" content={basics.name} />
     <title>{title}</title>
-    <meta name='description' content={description} />
+    <meta name="description" content={description} />
     <meta
-      name='keywords'
-      content='full stack developer, devops, astro, tailwind, typescript'
+      name="keywords"
+      content="full stack developer, devops, astro, tailwind, typescript"
     />
 
     <!-- Structured Data (JSON-LD) -->
     <script
-      type='application/ld+json'
+      type="application/ld+json"
       set:html={JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'Person',
@@ -84,77 +84,77 @@ const fullImageUrl = image.startsWith('http')
     />
 
     <!-- Open Graph -->
-    <meta property='og:type' content='website' />
-    <meta property='og:url' content={Astro.url} />
-    <meta property='og:site_name' content={site} />
-    <meta property='og:title' content={title} />
-    <meta property='og:description' content={description} />
-    <meta property='og:image' content={fullImageUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:site_name" content={site} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={fullImageUrl} />
 
     <!-- Twitter -->
-    <meta name='twitter:card' content='summary_large_image' />
-    <meta name='twitter:url' content={Astro.url} />
-    <meta name='twitter:title' content={title} />
-    <meta name='twitter:description' content={description} />
-    <meta name='twitter:image' content={fullImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={Astro.url} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={fullImageUrl} />
   </head>
   <body>
     <Header />
-    <main role='main' class='fade-in'>
+    <main role="main" class="fade-in">
       <slot />
     </main>
     <Footer />
     <button
-      id='scroll-to-top'
-      class='fixed bottom-6 right-6 z-40 hidden p-3 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-full shadow-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300 opacity-0 translate-y-4 focus:outline-none focus:ring-2 focus:ring-gray-500 dark:focus:ring-gray-400'
+      id="scroll-to-top"
+      class="fixed bottom-6 right-6 z-40 hidden p-3 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-full shadow-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300 opacity-0 translate-y-4 focus:outline-none focus:ring-2 focus:ring-gray-500 dark:focus:ring-gray-400"
     >
-      <span class='group' aria-label='Scroll to top'>
+      <span class="group" aria-label="Scroll to top">
         <svg
-          xmlns='http://www.w3.org/2000/svg'
-          fill='none'
-          viewBox='0 0 24 24'
-          stroke-width='2'
-          stroke='currentColor'
-          class='w-6 h-6'
-          aria-hidden='true'
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          class="w-6 h-6"
+          aria-hidden="true"
         >
           <path
-            stroke-linecap='round'
-            stroke-linejoin='round'
-            d='M4.5 15.75l7.5-7.5 7.5 7.5'></path>
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4.5 15.75l7.5-7.5 7.5 7.5"></path>
         </svg>
       </span>
     </button>
     <!-- PWA Update Notification -->
     <div
-      id='new-version-toast'
-      class='hidden fixed bottom-6 left-6 right-6 sm:right-auto z-50 p-4 rounded-lg shadow-lg bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 flex items-center gap-4'
-      role='alert'
-      aria-live='assertive'
+      id="new-version-toast"
+      class="hidden fixed bottom-6 left-6 right-6 sm:right-auto z-50 p-4 rounded-lg shadow-lg bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 flex items-center gap-4"
+      role="alert"
+      aria-live="assertive"
     >
-      <p class='text-sm'>A new version is available.</p>
-      <div class='flex gap-2'>
+      <p class="text-sm">A new version is available.</p>
+      <div class="flex gap-2">
         <button
-          id='pwa-refresh'
-          class='px-4 py-1 text-sm font-semibold rounded-md border border-gray-200 dark:border-gray-700 hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors'
+          id="pwa-refresh"
+          class="px-4 py-1 text-sm font-semibold rounded-md border border-gray-200 dark:border-gray-700 hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
         >
           Refresh
         </button>
         <button
-          id='pwa-close'
-          class='p-1 hover:bg-gray-800 dark:hover:bg-gray-200 rounded-full'
+          id="pwa-close"
+          class="p-1 hover:bg-gray-800 dark:hover:bg-gray-200 rounded-full"
         >
-          <span class='group' aria-label='Close update notification'>
+          <span class="group" aria-label="Close update notification">
             <svg
-              xmlns='http://www.w3.org/2000/svg'
-              class='h-5 w-5'
-              viewBox='0 0 20 20'
-              fill='currentColor'
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
             >
               <path
-                fill-rule='evenodd'
-                d='M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z'
-                clip-rule='evenodd'></path>
+                fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
             </svg>
           </span>
         </button>

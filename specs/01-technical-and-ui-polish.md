@@ -119,11 +119,11 @@ html.dark {
 
 ## Risks
 
-| Risk                                                       | Mitigation                                                                                   |
-| ---------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| La CSP `<meta>` bloquea algún recurso externo no previsto  | Es permisiva (`self` + `storage.hectorolea.dev` + `storage.googleapis.com`); revisar consola tras deploy. |
-| El SW de Workbox importa desde CDN (`storage.googleapis.com`) | Incluido en `script-src`/`connect-src`; si el CDN cae, el SW no actualiza pero el sitio sirve. |
-| `matchPrecache('/offline.html')` no resuelve              | `offline.html` está en `public/` y entra en `globPatterns` (`html`), por lo que se precachea con revisión. |
+| Risk                                                          | Mitigation                                                                                                 |
+| ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| La CSP `<meta>` bloquea algún recurso externo no previsto     | Es permisiva (`self` + `storage.hectorolea.dev` + `storage.googleapis.com`); revisar consola tras deploy.  |
+| El SW de Workbox importa desde CDN (`storage.googleapis.com`) | Incluido en `script-src`/`connect-src`; si el CDN cae, el SW no actualiza pero el sitio sirve.             |
+| `matchPrecache('/offline.html')` no resuelve                  | `offline.html` está en `public/` y entra en `globPatterns` (`html`), por lo que se precachea con revisión. |
 
 ---
 
