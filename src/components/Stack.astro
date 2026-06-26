@@ -1,10 +1,13 @@
 ---
-import cv from '@cv';
-import { Image } from 'astro:assets';
+import cvData from '@cv';
+import type { CV } from '@/types/cv';
 
+const cv = cvData as CV;
 const {
   stack: { sectionLabel, categories },
 } = cv;
+// Logos live in public/ and are referenced by path, so they're plain <img>
+// (public assets are not processed by Astro's <Image>).
 ---
 
 <section class='py-8 px-5' id='tech-stack'>
@@ -25,8 +28,9 @@ const {
                 alt={alt}
                 width='64'
                 height='64'
-                class='h-9 w-9 md:h-12 md:w-12 object-contain brightness-0 dark:invert image-placeholder image-placeholder'
+                class='h-9 w-9 md:h-12 md:w-12 object-contain brightness-0 dark:invert image-placeholder'
                 loading='lazy'
+                decoding='async'
               />
             </div>
           ))}

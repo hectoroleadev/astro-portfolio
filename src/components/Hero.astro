@@ -1,8 +1,10 @@
 ---
-import cv from '@cv';
+import cvData from '@cv';
+import type { CV } from '@/types/cv';
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 
+const cv = cvData as CV;
 const {
   basics: { name, summary, label, avatar, resumePdf },
   connect: { socials },
@@ -68,7 +70,7 @@ function getSocialAriaLabel(
     </div>
 
     <p
-      class='text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed px-4 md:px-0 text-justify'
+      class='text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed px-4 md:px-0 text-left'
     >
       {summary}
     </p>

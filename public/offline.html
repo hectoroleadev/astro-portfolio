@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Offline — hectorolea.dev</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      :root {
+        color-scheme: light dark;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Source Code Pro', monospace;
+        background: #f9fafb;
+        color: #111827;
+        text-align: center;
+        padding: 1.5rem;
+      }
+      @media (prefers-color-scheme: dark) {
+        body {
+          background: #111827;
+          color: #f9fafb;
+        }
+      }
+      main {
+        max-width: 28rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 0 0 0.5rem;
+      }
+      p {
+        opacity: 0.7;
+        line-height: 1.6;
+        margin: 0 0 1.5rem;
+      }
+      button {
+        font: inherit;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        border: 1px solid currentColor;
+        background: transparent;
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>You're offline</h1>
+      <p>
+        This page isn't cached yet. Check your connection and try again — once
+        you're back online the full site will load.
+      </p>
+      <button onclick="location.reload()">Retry</button>
+    </main>
+  </body>
+</html>

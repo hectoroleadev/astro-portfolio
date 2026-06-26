@@ -8,7 +8,9 @@
     "build": "astro check && astro build && npm run PWA",
     "preview": "astro preview --port 8080",
     "astro": "astro",
-    "PWA": "workbox injectManifest workbox-config.ts"
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "PWA": "workbox injectManifest workbox-config.cjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.1",
@@ -21,6 +23,8 @@
     "typescript": "^5.5.4"
   },
   "devDependencies": {
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1",
     "workbox-cli": "^7.1.0"
   }
 }

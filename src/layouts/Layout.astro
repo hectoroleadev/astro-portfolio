@@ -2,7 +2,10 @@
 import Footer from '@/components/shared/Footer.astro';
 import Header from '@/components/shared/Header.astro';
 import '@fontsource-variable/source-code-pro';
-import cv from '@cv';
+import cvData from '@cv';
+import type { CV } from '@/types/cv';
+
+const cv = cvData as CV;
 
 interface Props {
   title: string;
@@ -25,6 +28,13 @@ const fullImageUrl = image.startsWith('http')
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <!-- Conservative CSP. 'unsafe-inline' is required by the inline theme/SW
+         scripts and Tailwind's injected styles; storage.googleapis.com is the
+         Workbox CDN imported by the service worker. -->
+    <meta
+      http-equiv='Content-Security-Policy'
+      content="default-src 'self'; img-src 'self' https://storage.hectorolea.dev data:; script-src 'self' 'unsafe-inline' https://storage.googleapis.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self' https://storage.hectorolea.dev https://storage.googleapis.com; worker-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'self'"
+    />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <link rel='manifest' href='/manifest.json' />
     <link rel='icon' type='image/png' sizes='192x192' href='/maskable192.png' />
@@ -118,7 +128,7 @@ const fullImageUrl = image.startsWith('http')
     <!-- PWA Update Notification -->
     <div
       id='new-version-toast'
-      class='hidden fixed bottom-6 right-6 z-50 p-4 rounded-lg shadow-lg bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 flex items-center gap-4'
+      class='hidden fixed bottom-6 left-6 right-6 sm:right-auto z-50 p-4 rounded-lg shadow-lg bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 flex items-center gap-4'
       role='alert'
       aria-live='assertive'
     >
@@ -153,8 +163,25 @@ const fullImageUrl = image.startsWith('http')
   </body>
 </html>
 <style is:global>
+  :root {
+    --accent: 37 99 235; /* blue-600 */
+  }
+
+  html.dark {
+    --accent: 96 165 250; /* blue-400 — lighter for contrast on dark bg */
+  }
+
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Visible keyboard focus across interactive elements */
+  a:focus-visible,
+  button:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 2px;
+    border-radius: 0.25rem;
   }
 
   body {
@@ -245,9 +272,22 @@ const fullImageUrl = image.startsWith('http')
     z-index: 999;
   }
 
-  [data-tooltip]:hover::after {
+  [data-tooltip]:hover::after,
+  [data-tooltip]:focus-visible::after {
     opacity: 1;
     visibility: visible;
+  }
+
+  /* Respect users who prefer reduced motion: kill animations and transitions */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 </style>
 <script is:inline>

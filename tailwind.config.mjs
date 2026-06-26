@@ -4,6 +4,11 @@ export default {
   darkMode: 'selector',
   theme: {
     extend: {
+      colors: {
+        // Single restrained accent; value is driven by CSS vars so it adapts
+        // to light/dark and supports alpha modifiers (accent/10, accent/20...).
+        accent: 'rgb(var(--accent) / <alpha-value>)',
+      },
       screens: {
         smallLandscapeScreen: {
           raw: '(max-height: 450px)',

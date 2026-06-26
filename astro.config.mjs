@@ -10,5 +10,9 @@ export default defineConfig({
   devToolbar: {
     enabled: false
   },
+  image: {
+    // Authorize the external avatar host so <Image> can process it.
+    remotePatterns: [{ protocol: 'https', hostname: 'storage.hectorolea.dev' }]
+  },
   integrations: [tailwind(), icon(), sitemap()]
 });
