@@ -50,6 +50,8 @@ export interface Experience {
 export interface Logo {
   src: string;
   alt: string;
+  /** true = core technology, gets highlighted treatment in Stack */
+  core?: boolean;
 }
 
 export interface StackCategory {
