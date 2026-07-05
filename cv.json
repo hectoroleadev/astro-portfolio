@@ -3,7 +3,7 @@
     "name": "Hector Olea",
     "label": "Full-Stack Developer",
     "avatar": "https://storage.hectorolea.dev/hector-olea.jpg",
-    "summary": "Full-Stack Developer with 12 years of experience designing, modernizing, and scaling enterprise applications. Specialized in Java, Spring Boot, and microservices, with strong focus on clean architecture, automated testing, and event-driven systems using Kafka. I build reliable, maintainable software through solid engineering practices and modern DevOps workflows.",
+    "summary": "Full-Stack Developer with 12+ years of experience designing, modernizing, and scaling enterprise applications. Specialized in Java, Spring Boot, and microservices, with a strong focus on clean architecture, automated testing, and event-driven systems using Kafka. I pair solid engineering practices with AI-assisted development — Claude Code, GitHub Copilot, and MCP integrations — to ship reliable, maintainable software faster.",
     "siteName": "hectoroleadev",
     "resumePdf": "https://storage.hectorolea.dev/hector-olea-resume.pdf",
     "siteLogo": "/logo.svg",
@@ -44,13 +44,15 @@
     "sectionLabel": "Work experience",
     "jobs": [
       {
-        "company": "Tata Consulting Services",
+        "company": "Tata Consultancy Services (at USAA)",
         "position": "Full-Stack Developer",
         "startDate": "2025-09-01",
         "endDate": null,
         "summary": "",
         "highlights": [
-          "Strengthening backend architecture and microservices design as part of a strategic engineering team. Expanding expertise in scalable Java systems, cloud-native patterns, and event-driven architectures."
+          "Remediating security vulnerabilities across Java and React applications, hardening a large-scale financial platform on AWS.",
+          "Refactoring legacy services and adding Cypress regression suites to protect critical user flows.",
+          "Automating infrastructure and delivery workflows with Terraform, GitLab CI, and Python."
         ]
       },
       {
@@ -60,8 +62,8 @@
         "endDate": "2025-01-31",
         "summary": "",
         "highlights": [
-          "Enhanced an insurance platform built with Angular and Java microservices, refactoring 30% of the codebase to align with Spring Boot best practices.",
-          "Implemented JUnit/Mockito testing, raising test coverage from 0% to 20% and improving system reliability."
+          "Refactored 30% of an insurance platform's Angular and Java microservices codebase to align with Spring Boot best practices.",
+          "Raised test coverage from 0% to 20% with JUnit and Mockito, improving system reliability."
         ]
       },
       {
@@ -71,19 +73,19 @@
         "endDate": "2024-03-31",
         "summary": "",
         "highlights": [
-          "Ensured stability and performance of a financial analytics application by resolving incidents and optimizing workflows.",
-          "Improved response times through efficient incident management using ServiceNow."
+          "Kept a financial analytics platform stable and performant by resolving production incidents and optimizing workflows.",
+          "Reduced incident response times through structured incident management with ServiceNow."
         ]
       },
       {
-        "company": "IBM (at Discovey)",
+        "company": "IBM (at Discover)",
         "position": "Full-Stack Developer",
         "startDate": "2023-01-01",
         "endDate": "2023-11-30",
         "summary": "",
         "highlights": [
-          "Developed and enhanced microservices for a banking platform, integrating customer data via SSN and expanding case and product management capabilities.",
-          "Added initial automated tests to legacy services, increasing maintainability."
+          "Built and enhanced Java microservices for a banking platform, integrating customer data via SSN and expanding case and product management capabilities.",
+          "Introduced the first automated tests on legacy services, improving maintainability."
         ]
       },
       {
@@ -93,10 +95,10 @@
         "endDate": "2022-12-31",
         "summary": "",
         "highlights": [
-          "Developed and maintained more than 15 microservices using Spring Boot and Node.js in a high-scale retail environment.",
-          "Automated support tasks with Bash and Python, improving operational efficiency.",
+          "Built and maintained 15+ Spring Boot and Node.js microservices in a high-scale retail environment.",
           "Migrated services to Walmart’s Cloud Native platform and Kafka, improving scalability and reducing deployment complexity.",
-          "Modernized Spring Boot applications, Docker images, and project dependencies, improving security and stability."
+          "Modernized Spring Boot applications, Docker images, and project dependencies, strengthening security and stability.",
+          "Automated support tasks with Bash and Python, improving operational efficiency."
         ]
       },
       {
@@ -106,8 +108,8 @@
         "endDate": "2020-09-30",
         "summary": "",
         "highlights": [
-          "Automated operational workflows for the airline, reducing manual effort and improving efficiency.",
-          "Built monitoring and incident-handling automations with Python/Bash and REST APIs integrated with ServiceNow."
+          "Automated operational workflows for the airline, cutting manual effort and improving efficiency.",
+          "Built monitoring and incident-handling automations with Python, Bash, and REST APIs integrated with ServiceNow."
         ]
       },
       {
@@ -117,8 +119,8 @@
         "endDate": "2017-08-31",
         "summary": "",
         "highlights": [
-          "Maintained an invoicing system that processed transactions from FTP text files, ensuring reliable data integration.",
-          "Improved Oracle performance through SQL/PLSQL tuning and automated bulk data loading."
+          "Maintained an invoicing system processing transactions from FTP text files, ensuring reliable data integration.",
+          "Improved Oracle database performance through SQL/PLSQL tuning and automated bulk data loading."
         ]
       },
       {
@@ -139,36 +141,38 @@
       {
         "name": "Languages",
         "logos": [
-          { "src": "/logos/java.svg", "alt": "Java" },
+          { "src": "/logos/java.svg", "alt": "Java", "core": true },
+          { "src": "/logos/typescript.svg", "alt": "TypeScript", "core": true },
           { "src": "/logos/javascript.svg", "alt": "JavaScript" },
-          { "src": "/logos/python.svg", "alt": "Python" },
-          { "src": "/logos/typescript.svg", "alt": "TypeScript" }
+          { "src": "/logos/python.svg", "alt": "Python" }
         ]
       },
       {
         "name": "Frontend",
         "logos": [
-          { "src": "/logos/react.svg", "alt": "React" },
+          { "src": "/logos/react.svg", "alt": "React", "core": true },
           { "src": "/logos/angular.svg", "alt": "Angular" },
           { "src": "/logos/tailwindcss.svg", "alt": "Tailwind CSS" },
           { "src": "/logos/bootstrap.svg", "alt": "Bootstrap" },
-          { "src": "/logos/redux.svg", "alt": "Redux" }
+          { "src": "/logos/redux.svg", "alt": "Redux" },
+          { "src": "/logos/cypress.svg", "alt": "Cypress" }
         ]
       },
       {
         "name": "Backend",
         "logos": [
-          { "src": "/logos/spring-boot.svg", "alt": "Spring Boot" },
+          { "src": "/logos/spring-boot.svg", "alt": "Spring Boot", "core": true },
           { "src": "/logos/nodejs.svg", "alt": "Node.js" },
-          { "src": "/logos/spring-cloud.svg", "alt": "Spring Cloud" }
+          { "src": "/logos/spring-cloud.svg", "alt": "Spring Cloud" },
+          { "src": "/logos/junit.svg", "alt": "JUnit" }
         ]
       },
       {
         "name": "Data",
         "logos": [
-          { "src": "/logos/postgresql.svg", "alt": "PostgreSQL" },
+          { "src": "/logos/kafka.svg", "alt": "Kafka", "core": true },
+          { "src": "/logos/postgresql.svg", "alt": "PostgreSQL", "core": true },
           { "src": "/logos/mongodb.svg", "alt": "MongoDB" },
-          { "src": "/logos/kafka.svg", "alt": "Kafka" },
           { "src": "/logos/graphql.svg", "alt": "GraphQL" },
           { "src": "/logos/oracle.svg", "alt": "Oracle" }
         ]
@@ -176,14 +180,22 @@
       {
         "name": "DevOps & Tools",
         "logos": [
-          { "src": "/logos/aws.svg", "alt": "AWS" },
+          { "src": "/logos/aws.svg", "alt": "AWS", "core": true },
+          { "src": "/logos/docker.svg", "alt": "Docker", "core": true },
+          { "src": "/logos/terraform.svg", "alt": "Terraform", "core": true },
           { "src": "/logos/git.svg", "alt": "Git" },
-          { "src": "/logos/docker.svg", "alt": "Docker" },
           { "src": "/logos/kubernetes.svg", "alt": "Kubernetes" },
-          { "src": "/logos/terraform.svg", "alt": "Terraform" },
           { "src": "/logos/jenkins.svg", "alt": "Jenkins" },
           { "src": "/logos/maven.svg", "alt": "Maven" },
           { "src": "/logos/gradle.svg", "alt": "Gradle" }
+        ]
+      },
+      {
+        "name": "AI Tools",
+        "logos": [
+          { "src": "/logos/claude-code.svg", "alt": "Claude Code" },
+          { "src": "/logos/github-copilot.svg", "alt": "GitHub Copilot" },
+          { "src": "/logos/mcp.svg", "alt": "MCP" }
         ]
       }
     ]

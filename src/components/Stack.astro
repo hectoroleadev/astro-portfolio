@@ -8,20 +8,36 @@ const {
 } = cv;
 // Logos live in public/ and are referenced by path, so they're plain <img>
 // (public assets are not processed by Astro's <Image>).
+
+// Core technologies render first within their category regardless of JSON order
+// (stable sort preserves the authored order inside each group).
+const sortedCategories = categories.map((category) => ({
+  ...category,
+  logos: [...category.logos].sort(
+    (a, b) => Number(b.core ?? false) - Number(a.core ?? false)
+  ),
+}));
 ---
 
 <section class="py-8 px-5" id="tech-stack">
-  <h2 class="text-2xl font-bold mb-6">{sectionLabel}</h2>
-  <div class="space-y-4">
+  <h2 class="text-2xl font-bold tracking-tight mb-6">{sectionLabel}</h2>
+  <div class="space-y-5">
     {
-      categories.map(({ name, logos }) => (
+      sortedCategories.map(({ name, logos }) => (
         <div class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
-          <h3 class="text-lg font-semibold shrink-0 sm:w-40 sm:pt-1.5">
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 shrink-0 sm:w-40 sm:pt-2">
             {name}
           </h3>
           <div class="flex flex-wrap gap-2">
-            {logos.map(({ src, alt }) => (
-              <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md transition-colors duration-200">
+            {logos.map(({ src, alt, core }) => (
+              <span
+                class:list={[
+                  'inline-flex items-center gap-2 px-3 py-1.5 rounded-md transition-colors duration-200',
+                  core
+                    ? 'border border-accent/40 bg-accent/10 hover:bg-accent/20'
+                    : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700',
+                ]}
+              >
                 <img
                   src={src}
                   alt=""
@@ -31,7 +47,14 @@ const {
                   loading="lazy"
                   decoding="async"
                 />
-                <span class="text-sm font-medium text-gray-800 dark:text-gray-200">
+                <span
+                  class:list={[
+                    'text-sm',
+                    core
+                      ? 'font-semibold text-gray-900 dark:text-gray-100'
+                      : 'font-medium text-gray-800 dark:text-gray-200',
+                  ]}
+                >
                   {alt}
                 </span>
               </span>

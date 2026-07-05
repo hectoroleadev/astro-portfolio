@@ -31,7 +31,7 @@ function formatDateRange(
   aria-labelledby="experience-heading"
   id="work-experience"
 >
-  <h2 id="experience-heading" class="text-2xl font-bold mb-6">
+  <h2 id="experience-heading" class="text-2xl font-bold tracking-tight mb-6">
     {sectionLabel}
   </h2>
   <div class="space-y-8">
@@ -93,7 +93,7 @@ function formatDateRange(
               </p>
             )}
             {job.highlights && job.highlights.length > 0 && (
-              <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300 transition-colors duration-300">
+              <ul class="list-disc list-inside space-y-1.5 leading-relaxed marker:text-gray-400 dark:marker:text-gray-500 text-gray-700 dark:text-gray-300 transition-colors duration-300">
                 {job.highlights.map((highlight) => (
                   <li class="text-left">{highlight}</li>
                 ))}

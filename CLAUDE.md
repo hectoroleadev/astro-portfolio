@@ -34,3 +34,8 @@ There is no test suite. `astro check` (run via `build`) is the type/diagnostic g
 ## Deployment
 
 Pushing to `main` triggers `.github/workflows/deploy.yml`, which runs `npm run build` and publishes `dist/` to GitHub Pages. The `site` URL is configured in `astro.config.mjs`.
+
+
+## UI Design
+
+**Always invoke the `frontend-design` skill (`.claude/skills/`, pinned in `skills-lock.json`, source `anthropics/skills`) before building new UI or reshaping existing UI.** It drives distinctive, intentional visual design — palette, typography, layout, motion — and steers away from templated defaults. Use it for any component, page, or visual change; derive concrete color/type/spacing decisions from its process rather than reaching for generic patterns. For charts and data visualization specifically, pair it with the `dataviz` guidance.q
