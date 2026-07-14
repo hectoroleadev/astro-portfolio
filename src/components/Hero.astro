@@ -57,7 +57,10 @@ function getSocialAriaLabel(
           socials.map(({ url, label, icon, network }) => (
             <a
               href={url}
-              class="inline-flex items-center gap-2 px-4 py-2 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group my-hover"
+              class:list={[
+                'inline-flex items-center gap-2 px-4 py-2 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group my-hover',
+                network === 'email' && 'tooltip-end',
+              ]}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={getSocialAriaLabel(network, label)}
@@ -70,7 +73,7 @@ function getSocialAriaLabel(
     </div>
 
     <p
-      class="text-base md:text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed px-4 md:px-0 text-left max-w-prose mx-auto"
+      class="text-base md:text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed px-4 md:px-0 text-justify hyphens-auto max-w-prose mx-auto"
     >
       {summary}
     </p>

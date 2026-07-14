@@ -108,7 +108,7 @@ const fullImageUrl = image.startsWith('http')
       id="scroll-to-top"
       class="fixed bottom-6 right-6 z-40 hidden p-3 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-full shadow-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300 opacity-0 translate-y-4 focus:outline-none focus:ring-2 focus:ring-gray-500 dark:focus:ring-gray-400"
     >
-      <span class="group" aria-label="Scroll to top">
+      <span class="group tooltip-end" aria-label="Scroll to top">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -144,7 +144,7 @@ const fullImageUrl = image.startsWith('http')
           id="pwa-close"
           class="p-1 hover:bg-gray-800 dark:hover:bg-gray-200 rounded-full"
         >
-          <span class="group" aria-label="Close update notification">
+          <span class="group tooltip-end" aria-label="Close update notification">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-5 w-5"
@@ -173,6 +173,9 @@ const fullImageUrl = image.startsWith('http')
 
   html {
     scroll-behavior: smooth;
+    /* Safety net: absolutely-positioned decorations (tooltips) near the
+       viewport edge must never create a horizontal scrollbar */
+    overflow-x: clip;
   }
 
   /* Visible keyboard focus across interactive elements */
@@ -261,12 +264,15 @@ const fullImageUrl = image.startsWith('http')
     border-radius: 0.25em;
     background-color: rgba(51, 51, 51, 0.75);
     color: #fff;
-    white-space: nowrap;
+    width: max-content;
+    max-width: min(78vw, 12rem); /* long tooltips wrap instead of overflowing */
+    /* display:none (not visibility) — a hidden tooltip must not take up
+       overflow space, or it forces a horizontal scrollbar on small screens */
+    display: none;
     opacity: 0;
-    visibility: hidden;
     transition:
       opacity 0.2s,
-      visibility 0.2s;
+      display 0.2s allow-discrete;
     margin-bottom: 0.25rem; /* Smaller space between element and tooltip */
     font-size: 0.85rem; /* Smaller font size */
     z-index: 999;
@@ -274,8 +280,22 @@ const fullImageUrl = image.startsWith('http')
 
   [data-tooltip]:hover::after,
   [data-tooltip]:focus-visible::after {
+    display: block;
     opacity: 1;
-    visibility: visible;
+  }
+
+  @starting-style {
+    [data-tooltip]:hover::after,
+    [data-tooltip]:focus-visible::after {
+      opacity: 0;
+    }
+  }
+
+  /* For elements near the right viewport edge: grow the tooltip inward
+     so it never creates horizontal overflow */
+  .tooltip-end[data-tooltip]::after {
+    left: auto;
+    right: 0;
   }
 
   /* Respect users who prefer reduced motion: kill animations and transitions */
